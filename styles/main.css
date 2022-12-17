@@ -33,3 +33,58 @@ html{
 .page{
     height: 100vh;
 }
+
+.card-body {
+  min-height: 300px;
+  min-width: 300px;
+  margin-right: 5px;
+}
+
+.next-toggle, .prev-toggle{
+  position: absolute;
+  width: 1vw;
+  height: 1vh;
+  background-color: red;
+  top: 0;
+  left: 0;
+}
+
+.arrow{
+  background-color: transparent;
+  width: 3vw;
+  aspect-ratio: 1;
+  border: 1vw solid red;
+  border-bottom: none;
+  border-left: none;
+}
+
+.arrow-left{
+  transform: rotate(180deg);
+}
+
+.arrow-right{
+  transform: rotate(45deg);
+}
+
+.myDiv{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+}
+
+#signature{
+  stroke-dasharray: 972;
+  stroke-dashoffset: 972;
+  animation: sign 2s ease-out;
+  animation-delay: .8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sign {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
