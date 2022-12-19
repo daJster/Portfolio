@@ -88,3 +88,9 @@ html{
     stroke-dashoffset: 0;
   }
 }
+
+.hover-animation:hover{
+  color: whitesmoke;
+  background-color: rgb(14, 118, 168, .7);
+  transition: .2s ease-in-out;
+}

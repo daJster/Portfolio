@@ -11,6 +11,12 @@
     <title>Jad Elkarchi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
+
+<script>
+  const NEXT = 1;
+  const PREV = -1;
+</script>
+
 <body class="bg-light">
 
     <!--NAVBAR -->
@@ -79,21 +85,47 @@
             <div class="col col-lg-4 mt-5 ms-3 text-center">
                 <img class="myPhoto" src="./assets/myPhoto.png"><br>
                 <p class="lead p-3"> <strong class="fw-bold"><</strong> C.s Student <strong class="fw-bold">/></strong></p>
+
+                <!--Signature-->
                 <svg width="267" height="159" xmlns="http://www.w3.org/2000/svg" style="margin-top: -5vh;">
-                  <g><path id="signature" d="m54,104c0,1 0,2 1,2c2,0 5.8769,0.12311 10,-4c4.12311,-4.12311 5,-10 5,-15c0,-3 -1,-5 -2,-5c-2,0 -4.70711,0.29289 -4,1c1.41422,1.41422 4.50433,1.40601 9,-1c3.74063,-2.00192 4.70711,-5.29289 4,-6c-0.70711,-0.70711 -2,0 -2,1c0,1 1.00372,3.14944 4,3c10.0374,-0.50062 15.41589,-3.76108 17,-7c1.38935,-2.84072 1.30656,-5.4588 0,-6c-0.92388,-0.38268 -2.23463,0.15224 -3,2c-0.5412,1.30656 -0.98491,2.42533 5,2c7.05328,-0.50126 14.03487,-4.95846 20,-10c7.0415,-5.95125 16.88446,-16.49559 24,-30c4.59109,-8.71331 6.85065,-12.47427 6,-13c-1.90211,-1.17557 -3,3 -4,5c-5,10 -14,26 -28,50c-14,24 -31.75493,50.03876 -41,69c-3.74448,7.67976 -4,11 -3,11c1,0 2.0775,0.55136 4,0c9.06841,-2.60078 18.80289,-10.24756 30,-23c10.82146,-12.32462 16.86168,-22.17841 15,-29c-1.68582,-6.17722 -14.97594,-9.57069 -29,-9c-13.14207,0.5348 -25.95065,6.40592 -23,12c3.39645,6.43926 31.17262,5.51611 64,2c27.30289,-2.92439 49.69952,-8.40347 60,-17c3.83876,-3.20374 -0.68356,-9.81113 -30,-14c-49.65543,-7.09499 -96.8207,-9.03546 -126,-1c-7.34245,2.02198 0,5 38,7l56,1l59,-1l49,-6" id="svg_100" stroke-width="3" stroke="#000" fill="none"/></g>
+                  <g><path id="signature" d="m54,104c0,1 0,2 1,2c2,0 5.8769,0.12311 10,-4c4.12311,-4.12311 5,-10 
+                    5,-15c0,-3 -1,-5 -2,-5c-2,0 -4.70711,0.29289 -4,1c1.41422,1.41422 4.50433,1.40601 9,-1c3.74063,
+                    -2.00192 4.70711,-5.29289 4,-6c-0.70711,-0.70711 -2,0 -2,1c0,1 1.00372,3.14944 4,3c10.0374,-0.50062 
+                    15.41589,-3.76108 17,-7c1.38935,-2.84072 1.30656,-5.4588 0,-6c-0.92388,-0.38268 -2.23463,0.15224 
+                    -3,2c-0.5412,1.30656 -0.98491,2.42533 5,2c7.05328,-0.50126 14.03487,-4.95846 20,-10c7.0415,-5.95125 
+                    16.88446,-16.49559 24,-30c4.59109,-8.71331 6.85065,-12.47427 6,-13c-1.90211,-1.17557 -3,3 -4,5c-5,10 
+                    -14,26 -28,50c-14,24 -31.75493,50.03876 -41,69c-3.74448,7.67976 -4,11 -3,11c1,0 2.0775,0.55136 4,0c9.06841,
+                    -2.60078 18.80289,-10.24756 30,-23c10.82146,-12.32462 16.86168,-22.17841 15,-29c-1.68582,-6.17722 -14.97594,
+                    -9.57069 -29,-9c-13.14207,0.5348 -25.95065,6.40592 -23,12c3.39645,6.43926 31.17262,5.51611 64,2c27.30289,
+                    -2.92439 49.69952,-8.40347 60,-17c3.83876,-3.20374 -0.68356,-9.81113 -30,-14c-49.65543,-7.09499 -96.8207,
+                    -9.03546 -126,-1c-7.34245,2.02198 0,5 38,7l56,1l59,-1l49,-6" id="svg_100" stroke-width="3" stroke="#000" fill="none"/></g>
                 </svg>
+
             </div>
-            <div class="col">
+
+            <div class="col mt-3 ms-3">
                 <div class="lead display-3 fw-bold text-center text-lg-start">Welcome !</div>
-                <p class="lead text-dark mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Fuga voluptates libero porro cupiditate, sunt excepturi minus sed facilis dolore nobis obcaecati totam 
-                    recusandae culpa ratione eius consequuntur quas temporibus ut officiis ipsum accusantium, nisi quidem error! R
-                    epudiandae sapiente exercitationem omnis facilis commodi ad et quo dicta quod perferendis. Dolore enim odio nulla asperiores, 
-                    dolorem mollitia corrupti culpa magnam molestiae quis, beatae, quo laudantium! Optio qui esse perspiciatis autem, sunt blanditiis 
-                    dolorem magni voluptates quaerat, iusto doloremque laborum, odio ea! Enim voluptas alias hic voluptate ipsam dignissimos aliquam 
-                    repellat aut quasi rerum dolorum assumenda culpa cum quo, dicta architecto consequatur sit corporis earum, 
-                    iste ratione! Dicta cumque illum, dolorem dolores optio sed ut, ullam ipsam sunt adipisci quidem laboriosam iure quo.</p>
+                <p class="lead text-dark mt-2">My name is Jad, and I am a 
+                  computer science student at 
+                  <a class="btn-link text-decoration-none text-secondary" href="https://enseirb-matmeca.bordeaux-inp.fr/fr">
+                    <strong>Enseirb-Matmeca</strong>
+                  </a>.<br>
+
+                  I am passionate about using technology to solve real-world problems and am constantly learning 
+                  and staying up-to-date with the latest trends and developments in the field. On this website, you can 
+                  find out more about my background, education, and experiences, as well as my personal interests and hobbies.
+                  
+                  I have always been fascinated by the world of computer science and am excited to pursue a career in this 
+                  field. I am eager to use my knowledge and skills to make a positive impact in the world and am constantly looking 
+                  for new opportunities to learn and grow.<br>
+                  
+                  Thank you for visiting my website. I hope you find it informative and enjoyable. If you have any questions or 
+                  would like to connect with me, please feel free to reach out using the contact information provided on this site.<br>
+                  
+                  Best regards,<br>
+                  </p>
             </div>
+
         </div>
     </section>
 
@@ -104,39 +136,150 @@
             </div>
         </div>
         <div class="row mt-5 ms-lg-5 justify-content-center row-lg rounded-5">
-            <div class="col-lg-9 col">
+
+            <!--Element-->
+            <div class="col-lg-9 col element content expertise">
                 <div class="card rounded-0 rounded-bottom">
                     <img src="./assets/portfolio3.jpg">
                     <div class="p-3">
-                    <h5 class="card-title display-6 fw-bold">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Quod perspiciatis esse aliquam, deleniti illum nostrum natus eaque dolores expedita 
-                        aliquid incidunt. Aliquid culpa animi magnam distinctio deserunt pariatur, 
-                        alias aut nisi corrupti temporibus aliquam incidunt! 
-                        Nobis fugiat, quisquam, pariatur esse expedita quis illo cum aspernatur a molestiae impedit similique culpa.</p>
+                    <h5 class="card-title display-6 fw-bold">Professional Photographer</h5>
+                    <p class="card-text">When I was in my first year of computer science studies in Bordeaux
+                      I found some time to practice a hobby of mine. Photography was one of the arts I was interested in
+                      when I was a little boy, and growing up I had the chance to have experiences and knowledge about this
+                      field. In 2021, I finally decided to get myself a camera and start my journey in Phalsootography.<br> 
+                      Fortunately, I found a student job in Bordeaux as a professional photographer and it helped me feed my art needs
+                      and improve my communication skills.
+                    </p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Duration 2 months</small>
-                        <a href="#" class="btn-link text-secondary ms-5">report</a>
-                        <a href="#" class="btn-link text-secondary ms-5">github</a>
+                        <a href="#" class="btn-link text-secondary ms-5">website</a>
                     </div>
                 </div>
             </div>
+
+            <!--Element-->
+            <div class="col-lg-9 d-none col element content expertise">
+                <div class="card rounded-0 rounded-bottom">
+                    <img src="./assets/portfolio3.jpg">
+                    <div class="p-3">
+                    <h5 class="card-title display-6 fw-bold">Professional Photographer2</h5>
+                    <p class="card-text">When I was in my first year of computer science studies in Bordeaux
+                      I found some time to practice a hobby of mine. Photography was one of the arts I was interested in
+                      when I was a little boy, and growing up I had the chance to have experiences and knowledge about this
+                      field. In 2021, I finally decided to get myself a camera and start my journey in Phalsootography.<br> 
+                      Fortunately, I found a student job in Bordeaux as a professional photographer and it helped me feed my art needs
+                      and improve my communication skills.
+                    </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Duration 2 months</small>
+                        <a href="#" class="btn-link text-secondary ms-5">website</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Element-->
+            <div class="col-lg-9 d-none col element content expertise">
+              <div class="card rounded-0 rounded-bottom">
+                  <img src="./assets/portfolio3.jpg">
+                  <div class="p-3">
+                  <h5 class="card-title display-6 fw-bold">Professional Photographer3</h5>
+                  <p class="card-text">When I was in my first year of computer science studies in Bordeaux
+                    I found some time to practice a hobby of mine. Photography was one of the arts I was interested in
+                    when I was a little boy, and growing up I had the chance to have experiences and knowledge about this
+                    field. In 2021, I finally decided to get myself a camera and start my journey in Phalsootography.<br> 
+                    Fortunately, I found a student job in Bordeaux as a professional photographer and it helped me feed my art needs
+                    and improve my communication skills.
+                  </p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Duration 2 months</small>
+                      <a href="#" class="btn-link text-secondary ms-5">website</a>
+                  </div>
+              </div>
+            </div>
+
+            <!--Element-->
+            <div class="col-lg-9 d-none col element content expertise">
+              <div class="card rounded-0 rounded-bottom">
+                  <img src="./assets/portfolio3.jpg">
+                  <div class="p-3">
+                  <h5 class="card-title display-6 fw-bold">Professional Photographer4</h5>
+                  <p class="card-text">When I was in my first year of computer science studies in Bordeaux
+                    I found some time to practice a hobby of mine. Photography was one of the arts I was interested in
+                    when I was a little boy, and growing up I had the chance to have experiences and knowledge about this
+                    field. In 2021, I finally decided to get myself a camera and start my journey in Phalsootography.<br> 
+                    Fortunately, I found a student job in Bordeaux as a professional photographer and it helped me feed my art needs
+                    and improve my communication skills.
+                  </p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Duration 2 months</small>
+                      <a href="#" class="btn-link text-secondary ms-5">website</a>
+                  </div>
+              </div>
+            </div>
+
+            <!--Element-->
+            <div class="col-lg-9 d-none col element content expertise">
+              <div class="card rounded-0 rounded-bottom">
+                  <img src="./assets/portfolio3.jpg">
+                  <div class="p-3">
+                  <h5 class="card-title display-6 fw-bold">Professional Photographer5</h5>
+                  <p class="card-text">When I was in my first year of computer science studies in Bordeaux
+                    I found some time to practice a hobby of mine. Photography was one of the arts I was interested in
+                    when I was a little boy, and growing up I had the chance to have experiences and knowledge about this
+                    field. In 2021, I finally decided to get myself a camera and start my journey in Phalsootography.<br> 
+                    Fortunately, I found a student job in Bordeaux as a professional photographer and it helped me feed my art needs
+                    and improve my communication skills.
+                  </p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Duration 2 months</small>
+                      <a href="#" class="btn-link text-secondary ms-5">website</a>
+                  </div>
+              </div>
+            </div>
+
+
+            <!--Element-->
+            <div class="col-lg-9 d-none col element content expertise">
+              <div class="card rounded-0 rounded-bottom">
+                  <img src="./assets/portfolio3.jpg">
+                  <div class="p-3">
+                  <h5 class="card-title display-6 fw-bold">Professional Photographer6</h5>
+                  <p class="card-text">When I was in my first year of computer science studies in Bordeaux
+                    I found some time to practice a hobby of mine. Photography was one of the arts I was interested in
+                    when I was a little boy, and growing up I had the chance to have experiences and knowledge about this
+                    field. In 2021, I finally decided to get myself a camera and start my journey in Phalsootography.<br> 
+                    Fortunately, I found a student job in Bordeaux as a professional photographer and it helped me feed my art needs
+                    and improve my communication skills.
+                  </p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Duration 2 months</small>
+                      <a href="#" class="btn-link text-secondary ms-5">website</a>
+                  </div>
+              </div>
+            </div>
+
+
         </div>
 
         <div class="row  justify-content-center rounded-3 p-3">
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-secondary"></div>
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
+          <div style="height: 1vh; width: 1vw;" class=" element cursor expertise col-1 ms-1 border border-secondary bg-secondary"></div>
+          <div style="height: 1vh; width: 1vw;" class=" element cursor expertise col-1 ms-1 border border-secondary bg-light"></div>
+          <div style="height: 1vh; width: 1vw;" class=" element cursor expertise col-1 ms-1 border border-secondary bg-light"></div>
+          <div style="height: 1vh; width: 1vw;" class=" element cursor expertise col-1 ms-1 border border-secondary bg-light"></div>
+          <div style="height: 1vh; width: 1vw;" class=" element cursor expertise col-1 ms-1 border border-secondary bg-light"></div>
+          <div style="height: 1vh; width: 1vw;" class=" element cursor expertise col-1 ms-1 border border-secondary bg-light"></div>
         </div>
 
 
-        <div class="row  justify-content-center rounded-3 p-3">
-          <button class="col-md-2 me-1 col-4 rounded-0 btn btn-light">< Previous</button>
-          <button class="col-md-2 ms-2 col-4 rounded-0 btn btn-light">Next ></button>
+        <div class="row justify-content-center rounded-3 p-3">
+          <button class="col-md-2 me-1 col-4 rounded-0 btn btn-light hover-animation" onclick="UIAction('expertise', PREV);" >< Previous</button>
+          <button class="col-md-2 ms-2 col-4 rounded-0 btn btn-light hover-animation" onclick="UIAction('expertise', NEXT);">Next ></button>
         </div>
     </section>
 
@@ -153,33 +296,41 @@
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                           Accordion Item #1
                         </button>
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse 
+                          plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, 
+                          as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our 
+                          default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, 
+                          though the transition does limit overflow.
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                           Accordion Item #2
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin 
+                          adds the appropriate classes that we use to style each element. These classes control the overall appearance, 
+                          as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding 
+                          our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, 
+                          though the transition does limit overflow.
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                           Accordion Item #3
                         </button>
                       </h2>
@@ -204,7 +355,9 @@
         </div>
         
         <div class="row mt-5 ms-lg-5 justify-content-center row-lg rounded-5">
-            <div class="col-lg-9 col bg-dark pb-4">
+
+            <!--List-->
+            <div class="col-lg-9 element content skills col bg-dark pb-4">
                 <div class="row m-2 mt-2">
                     <!--Element -->
                     <div class="col-12 mt-4 col-md-6">
@@ -213,7 +366,7 @@
                                 <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
                             </div>
                             <div class="col-10">
-                                <div class="lead text-light fw-bold ms-3">title</div>
+                                <div class="lead text-light fw-bold ms-3">JavaScript</div>
                                 <div class="row m-1">
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
@@ -221,7 +374,7 @@
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
-                                    <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                                    <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-light bg-light"></div>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +394,7 @@
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                     <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
-                                    <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                                    <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-light bg-light"></div>
                                 </div>
                             </div>
                         </div>
@@ -369,17 +522,196 @@
                     </div>
                 </div>
             </div>
+
+
+            <!--List-->
+            <div class="col-lg-9 element content skills d-none col bg-dark pb-4">
+              <div class="row m-2 mt-2">
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-2 border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3 ms-">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Element -->
+                  <div class="col-12 mt-4 col-md-6">
+                      <div class="row m-1">
+                          <div class="col-2">
+                              <img src="./assets/icons/javascript.svg" style="width:42px; aspect-ratio:1;">
+                          </div>
+                          <div class="col-10">
+                              <div class="lead text-light fw-bold ms-3">title</div>
+                              <div class="row m-1">
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                                  <div style="height: 1vh; width:1vw;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
         </div>
         
-        <div class="row  justify-content-center rounded-3 p-3">
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-secondary"></div>
-          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
+        <div class="row ms-2 justify-content-center rounded-3 p-3">
+          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 element cursor skills border border-secondary bg-secondary"></div>
+          <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 element cursor skills border border-secondary bg-light"></div>
         </div>
 
 
         <div class="row  justify-content-center rounded-3 p-3">
-          <button class="col-md-2 me-1 col-4 rounded-0 btn btn-light">< Previous</button>
-          <button class="col-md-2 ms-2 col-4 rounded-0 btn btn-light">Next ></button>
+          <button class="col-md-2 me-1 col-4 rounded-0 btn btn-light hover-animation" onclick="UIAction('skills', PREV);">< Previous</button>
+          <button class="col-md-2 ms-2 col-4 rounded-0 btn btn-light hover-animation" onclick="UIAction('skills', NEXT);">Next ></button>
+        </div>
+
+        <div class="row p-3" style="background-color: white;">
+          <div class="col-12 m-2 p-2">
+            <p class="lead text-start text-secondary"><strong class="fw-bold">Note :</strong> 
+            This skill section is based on my experience in tools and programming languages, 
+            some of my hard skills can be unadapted and not perfectly fit for a project or a research, 
+            but they can be sharpened to reach the required level. I am capable of 
+            learning in volant speeds and enhance my mechanisms to adapt to a given task.</p>
+          </div>
         </div>
     </section>
 
@@ -395,40 +727,78 @@
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          Accordion Item #1
+                        <button class="accordion-button hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          IELTS Certificate
                         </button>
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <p class="lead text-dark">
+                              I have had the opportunity to pass the International English Language Testing System, or IELTS, certification at my school.
+                              IELTS is a globally recognized language proficiency test that measures a person's ability to communicate in 
+                              English in an academic or professional setting. 
+                              It is recognized by over 10,000 institutions in over 140 countries, including universities, employers,
+                               and immigration authorities.<br><br>
+                              The IELTS test consists of four parts: listening, reading, writing, and speaking. The listening and reading sections are 
+                              the same for both the Academic and General Training tests, while the writing and speaking sections are different.
+  
+                              IELTS scores are based on a band scale from 0 to 9, with 9 being the highest level of proficiency. Scores are reported in whole and half bands, 
+                              and test takers receive a separate score for each of the four test components.<br>
+                              please visit my <strong>LinkedIn</strong> to find my certificate. 
+                            </p>
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Accordion Item #2
+                        <button class="accordion-button collapsed text-decoration-line-through hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">                          
+                            DataCamp Data Scientist Certificate (Not yet)
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <p class="lead text-dark">
+                              Demand for data talent far exceeds the supply of qualified candidates. This has made 
+                              recruiting data talent extremely difficult and competitive. 
+                              Datacamp's certification programs help me stand out and prove my skills are job-ready to potential employers.
+                              It show employers my analytical and technical prowess with DataCamp's highly regarded Data Scientist certification: proof 
+                              that I know how to wrangle data and uncover nuggets of business gold.<br>
+                              Datacamp's certification process consists of timed exams focused on exploratory analysis,
+                              data management, model development, and statistical experimentation. I will also show our experts my data science
+                              programming abilities, how well I communicate my
+                              findings and analyses, and that I can adeptly use <code>Python</code> or <code>R</code> alongside <code>SQL</code> for data science tasks and processes.
+                              The Data Scientist certification was built on a foundation of job market data. That means I am not getting a generic
+                              certificate — I am gaining a certification that's designed to prove I have the in-demand skills required for today's data jobs.<br>
+                              please visit my <strong>LinkedIn</strong> to find my certificate. 
+                            </p>
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Accordion Item #3
+                        <button class="accordion-button collapsed text-decoration-line-through  hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          IBM Cybersecurity Analyst Professional Certificate (Not yet)
                         </button>
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <p class="lead text-dark">
+                              A growing number of exciting, well-paying jobs in today's security industry do 
+                              not require a college degree. This Professional Certificate will give me the technical 
+                              skills to become job-ready for a Cybersecurity Analyst role. Instructional content and labs 
+                              will introduce me to concepts including network security, endpoint protection, incident response, 
+                              threat intelligence, penetration testing, and vulnerability assessment.
+                              Cybersecurity is one of the most in-demand career fields.<br>
+                              This Certification will help me to Develop knowledge of cybersecurity analyst tools including data 
+                              protection, endpoint protection, SIEM, and systems and network fundamentals.   
+                              And also to Learn about key compliance and threat intelligence topics important in today's cybersecurity landscape. 
+                              Gain skills for incident responses and forensics with real-world cybersecurity case studies, and
+                              get hands-on experience to develop skills via industry specific and open source Security tools.<br>
+                              please visit my <strong>LinkedIn</strong> to find my certificate. 
+                            </p>
                         </div>
                       </div>
                     </div>
@@ -448,13 +818,13 @@
         <div class="row mt-5 ms-lg-5 justify-content-center row-lg rounded-5">
           <div class="col-lg-9 col bg-dark pb-4">
               <div class="row m-2 mt-2">
+
                   <!--Element -->
-                  <div class="col-12 mt-4 ">
+                  <div class="col-12 element content languages mt-4 ">
                       <div class="row m-1">
                           <div class="col-12">
                               <div class="display-4 text-light ms-3">English</div>
                               <div class="row m-3">
-                                  <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                   <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                   <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
                                   <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
@@ -468,30 +838,133 @@
                       </div>
                       <div class="row m-1 ms-4">
                         <div class="col-12">
-                            <div class="lead fw-bold text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. V
-                              el doloribus totam temporibus, deserunt quasi dolor distinctio et vitae unde quis doloremque aspernatur, 
-                              voluptas modi, quidem dicta. Culpa illum quisquam iusto nobis autem sapiente, 
-                              minus aliquid sint inventore at vel ab quibusdam veniam odio quia natus suscipit 
-                              quaerat, explicabo maxime! Hic!</div>
+                            <div class="lead text-light">Being proficient in English can open up many opportunities for
+                              personal and professional development, as it is a widely spoken language used for communication in a 
+                              variety of contexts around the world. I have considered when improving my english through out my curriculum 
+                              reading and writing regularly,
+                              practicing speaking with native speakers or through language learning programs, and learning about
+                              grammar and vocabulary. 
+                              With dedication and practice, I have passed my IELTS test and I've proven to have the required level
+                              for my professional career. I am continuing to develop your English language skills every day.
+                            </div>
                         </div>
                     </div>
                   </div>
 
+                 <!--Element -->
+                 <div class="col-12 element content languages d-none mt-4 ">
+                  <div class="row m-1">
+                      <div class="col-12">
+                          <div class="display-4 text-light ms-3">French</div>
+                          <div class="row m-3">
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row m-1 ms-4">
+                    <div class="col-12">
+                        <div class="lead text-light">
+                          I've been living in France from sometime now, and I've always believed that 
+                          being able to read and understand French literature allows you to access a rich and diverse range of 
+                          cultural works and insights. 
+                          I've started my journey improving my French language skills since 2006, I have considered
+                          reading regularly, practicing my 
+                          French language skills with natives and classmates, and learning about French literary history and cultural context. 
+                          By immersing myself in French literature, 
+                          I could deepen my understanding and appreciation of the language and its cultural significance.
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+
+                 <!--Element -->
+                 <div class="col-12 element content languages d-none mt-4 ">
+                  <div class="row m-1">
+                      <div class="col-12">
+                          <div class="display-4 text-light ms-3">Arabic</div>
+                          <div class="row m-3">
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row m-1 ms-4">
+                    <div class="col-12">
+                        <div class="lead text-light">
+                          It is wonderful that I am a native speaker of Arabic and proficient in this language. Being a native speaker of this
+                          language means that I have a natural fluency and understanding of the language, which can be a valuable asset in both personal 
+                          and professional contexts. As a native speaker, I have a strong foundation in Arabic and have a natural ability to understand 
+                          and use the language with ease, even when it comes to multiple other dialects (e.g Egyptian, Tunisian, Algerian,...). 
+                          To continue improving my Arabic language skills, I keep reading and writing regularly, especially with my parents I keep
+                          practicing speaking with them, and learning about it's <strong>infinite</strong> grammar and vocabulary. 
+                          By staying engaged with the language, I can continue to develop my skills and deepen my understanding my language and culture.
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+    
+                <!--Element -->
+                <div class="col-12 element content languages d-none mt-4 ">
+                  <div class="row m-1">
+                      <div class="col-12">
+                          <div class="display-4 text-light ms-3">German</div>
+                          <div class="row m-3">
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-primary bg-primary"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-light bg-light"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-light bg-light"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-light bg-light"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1 border border-light bg-light"></div>
+                              <div style="height: 1vh;" class="col-1 ms-lg-2 ms-1  border border-light bg-light"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row m-1 ms-4">
+                    <div class="col-12">
+                        <div class="lead text-light">
+                          I have been learning German for almost 2 years now, and I will be going to a semester abroad in Freiburg in Germany.
+                          Learning German can be a great way to expand my social skills and connect with others.<br>
+                          German is a widely spoken language in Europe and around the world, and learning it can open up many opportunities for communication and 
+                          connection with native speakers. By learning German, I can participate in conversations with native speakers, 
+                          understand German media and culture, and make new connections with people from German-speaking countries. In addition, 
+                          learning a new language helps improve my communication skills and ability to understand and empathize with others, 
+                          which can be valuable social skills in general contexts and professional ones. 
+                          By dedicating myself to learning and practicing German, I can expand my social skills and broaden my horizons even more.
+                        </div>
+                    </div>
+                </div>
+              </div>
 
               </div> <!--End row-->
             </div> 
             
             <div class="row  justify-content-center rounded-3 p-3">
-              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-secondary"></div>
-              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
-              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
-              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 border border-secondary bg-light"></div>
+              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 element cursor languages border border-secondary bg-secondary"></div>
+              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 element cursor languages border border-secondary bg-light"></div>
+              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 element cursor languages border border-secondary bg-light"></div>
+              <div style="height: 1vh; width: 1vw;" class="col-1 ms-1 element cursor languages border border-secondary bg-light"></div>
             </div>
 
 
             <div class="row  justify-content-center rounded-3 p-3">
-              <button class="col-md-2 me-1 col-4 rounded-0 btn btn-light">< Previous</button>
-              <button class="col-md-2 ms-2 col-4 rounded-0 btn btn-light">Next ></button>
+              <button class="col-md-2 me-1 col-4 rounded-0 btn btn-light hover-animation" onclick="UIAction('languages', PREV);">< Previous</button>
+              <button class="col-md-2 ms-2 col-4 rounded-0 btn btn-light hover-animation" onclick="UIAction('languages', NEXT);">Next ></button>
             </div>
           </div>
     </section>
@@ -508,40 +981,52 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="accordion-button hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                               Accordion Item #1
                             </button>
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                              <strong>This is the first item's accordion body.</strong> It is shown by default, 
+                              until the collapse plugin adds the appropriate classes that we use to style each element. 
+                              These classes control the overall appearance, as well as the showing and hiding via CSS transitions. 
+                              You can modify any of this with custom CSS or overriding our default variables. It's also worth noting 
+                              that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                             </div>
                           </div>
                         </div>
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                               Accordion Item #2
                             </button>
                           </h2>
                           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                              <strong>This is the second item's accordion body.</strong> It is hidden by default, 
+                              until the collapse plugin adds the appropriate classes that we use to style each element. 
+                              These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                              You can modify any of this with custom CSS or overriding our default variables. It's also worth noting 
+                              that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                             </div>
                           </div>
                         </div>
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                               Accordion Item #3
                             </button>
                           </h2>
                           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin 
+                              adds the appropriate classes that we use to style each element. These classes control the overall appearance, 
+                              as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding 
+                              our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, 
+                              though the transition does limit overflow.
                             </div>
                           </div>
                         </div>
@@ -559,18 +1044,22 @@
         </div>
 
         <div class="row mt-5 ms-lg-5 justify-content-center row-lg p-5" style="background-color: white;">
-          <div class="col-lg-4 col-sm-12 col-md-6 pb-4 ms-md-0 ms-lg-0 ms-xl-0 ms-5">
+          <div class="col-lg-4 col-sm-12 col-md-6 pb-4 mt-5 ms-md-0 ms-lg-0 ms-xl-0 ms-5">
             <img src="./assets/gamesSection.png" style="height:400px;">
           </div>
           <div class="col-lg-8 col-12 pb-4">
-            <p class="lead text-dark text-center text-md-start mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-              Iure quisquam cum voluptates exercitationem minus porro cumque officia nisi fugiat expedita deleniti amet 
-              vel, voluptas nostrum culpa tempora corporis illum. Itaque recusandae facilis ex error magnam dolores, sapiente, 
-              rerum at quo asperiores inventore laborum eaque repudiandae odio assumenda autem voluptatibus sint expedita similique, 
-              natus deleniti laudantium aliquid quae nihil? Molestias magni iste perferendis nemo eum et doloremque recusandae corporis iusto 
-              autem sapiente, quo cumque? Vero adipisci, eligendi distinctio dicta alias illo perferendis 
-              recusandae dolores obcaecati sapiente error veritatis ipsa? Neque enim quibusdam nostrum nemo perspiciatis
-              provident atque officiis dolor quisquam. Nam?</p>
+            <p class="lead text-dark text-center text-md-start mt-5">In my spare time I like to think about game ideas, and creative ways 
+              to build games and web applications. In fact, this website was a mere course to understand <code>Bootstrap</code> and have a better understading 
+              in creating websites and embedding games in them.<br>
+              Having a hobby of playing and creating video games can be a great way to develop 
+              and hone my problem-solving skills and explore my interests in computer science. Video games or arcade games often require players to think critically 
+              and creatively to solve challenges and progress through the game. By playing and creating video games, I can develop my ability to 
+              analyze problems, think logically, and come up with creative solutions. This can be a valuable skill in a career in computer science, 
+              where problem-solving is a key aspect of the work. Additionally, creating video games can give my hands on experience with computer 
+              science concepts and technologies, such as programming, game theory and design, and computer graphics. By combining your passion for video games 
+              with your career aspirations in computer science, you can continue to develop your skills and explore your interests in a meaningful way.<br>
+              I hope you check my humble web games and gadgets and try them out!
+            </p>
           </div>
         </div>
     </section>
@@ -584,7 +1073,7 @@
                   <div class="row m-2 p-2 justify-content-center">
                     
                     <div class="col-12 text-center">
-                      <a href="#contact" class="btn-link bg-light text-decoration-none fw-bold">
+                      <a href="https://www.linkedin.com/in/jad-elkarchi-1894181bb/" class="btn-link bg-light text-decoration-none fw-bold">
                         <div class="container justify-content-center">
                           <img src="./assets/icons/LinkedIn.svg" style="height:40px;">
                         </div>
