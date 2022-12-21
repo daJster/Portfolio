@@ -24,6 +24,10 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .myPhoto{
     border-radius: 50%;
     border: 6px solid lightgray;
@@ -44,7 +48,6 @@ html{
   position: absolute;
   width: 1vw;
   height: 1vh;
-  background-color: red;
   top: 0;
   left: 0;
 }
@@ -53,7 +56,6 @@ html{
   background-color: transparent;
   width: 3vw;
   aspect-ratio: 1;
-  border: 1vw solid red;
   border-bottom: none;
   border-left: none;
 }
@@ -72,7 +74,6 @@ html{
   left: 0;
   height: 20px;
   width: 20px;
-  background-color: red;
 }
 
 #signature{
@@ -93,4 +94,44 @@ html{
   color: whitesmoke;
   background-color: rgb(14, 118, 168, .7);
   transition: .2s ease-in-out;
+}
+
+.gamejam-screen{
+  background: linear-gradient(167deg, rgba(1,0,36,1) 0%, rgba(121,9,111,1) 49%, rgba(98,0,255,1) 100%);
+  transition: 1s ease-out;  
+}
+
+.gamejam-screen:hover{
+  color: black;
+  background: linear-gradient(167deg, rgba(33,36,0,1) 0%, rgba(121,24,9,1) 36%, rgba(255,205,0,1) 100%);
+}
+
+.gamejam-page.isActive{
+}
+
+.gamejam-page{
+  background: linear-gradient(167deg, rgba(1,0,36,1) 0%, rgba(121,9,111,1) 49%, rgba(98,0,255,1) 100%);
+  position: absolute;
+  top: 8vh;
+  left: 100vw;
+  height: 92vh;
+  width: 100vw;
+  transition: .5s ease-in-out;
+}
+
+.gamejam-page.isActive{
+  transform: translateX(-100vw);
+}
+
+.portfolio{
+  transform: translateX(-100vw);
+  transition: .5s ease-in-out;
+}
+
+.portfolio.isActive{
+  transform: translateX(0);
+}
+
+.navbar{
+  width: 100vw;
 }

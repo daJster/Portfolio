@@ -22,10 +22,10 @@
     <!--NAVBAR -->
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <button class=" btn btn-link text-light navbar-brand" onclick="closeGJ();">
             <img src="./assets/appLogo.png" alt="Logo" width="30" height="24" class="d-inline-block mt-1 align-text-top">
             Jad Elkarchi
-          </a>
+          </button>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -55,7 +55,11 @@
                   <div class="col-12">
                     <li><a class="dropdown-item" href="#games">About</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item gamejam-link" href="#games">GameJam</a></li>
+                    <li>
+                      <button class="text-light fw-bold text-decoration-none  text-center btn gamejam-screen dropdown-item rounded" onclick="launchGJ();">
+                        GameJam
+                      </button>
+                    </li>
                   </div>
                 </ul>
 
@@ -69,7 +73,7 @@
       </nav>
 
 
-
+    <div class="portfolio isActive">
     <section id="#" class="container container-light mt-lg-5 pt-4 ms-lg-5">
         <div class="row mt-lg-5 ms-lg-5">
             <div class="col col-lg-4 mt-5 ms-3 text-center">
@@ -287,51 +291,80 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          Accordion Item #1
+                          2nd year computer science student at Enseirb-Matmeca <strong class="ms-2">(2021 - 2024)</strong>
                         </button>
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse 
-                          plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, 
-                          as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our 
-                          default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, 
-                          though the transition does limit overflow.
+                            <img src="./assets/enseirb-educ.jpg" style="width:100%;" class="mb-4">
+                          
                         </div>
                       </div>
                     </div>
+
+                    <!--ITEM-->
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Accordion Item #2
+                          Erasmus Student at Albert-Ludwifgs university in Freiburg <strong class="ms-2">(April 2023 - September 2023)</strong>
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin 
-                          adds the appropriate classes that we use to style each element. These classes control the overall appearance, 
-                          as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding 
-                          our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, 
-                          though the transition does limit overflow.
+                            <img src="./assets/albert-ludwig-educ.png" style="width:100%;" class="mb-4">
+                          
                         </div>
                       </div>
                     </div>
+
+                    <!--ITEM-->
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Accordion Item #3
-                        </button>
+                          Following skill tracks in Datacamp <strong class="ms-2"> (Unsupervised) (December 2022 - Present) </strong>
+                         </button>
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
-                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <img src="./assets/datacamp-educ.png" style="width:100%;" class="mb-4">
+                          
                         </div>
                       </div>
                     </div>
+
+
+                    <!--ITEM-->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          2 years of advanced scientific studies to pass the engineering schools contest <strong class="ms-2">(CPGE) (2019 - 2021)</strong>
+                        </button>
+                      </h2>
+                      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <img src="./assets/mv-educ.jpg" style="width:100%;" class="mb-4">
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--ITEM-->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed hover-animation" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          Baccalaureate in high school Riad, Morrocan high school diploma in Science-Maths <strong class="ms-2">(2017 - 2019)</strong> 
+                        </button>
+                      </h2>
+                      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <img src="./assets/riad-educ.jpg" style="width:100%;" class="mb-4">
+                          
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
+                  
             </div>
         </div>
     </section>
@@ -893,7 +926,7 @@
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
+                            <img src="./assets/ielts-score.png" style="width:100%;" class="mb-4">
                             <p class="lead text-dark">
                               I have had the opportunity to pass the International English Language Testing System, or IELTS, certification at my school.
                               IELTS is a globally recognized language proficiency test that measures a person's ability to communicate in 
@@ -905,7 +938,7 @@
   
                               IELTS scores are based on a band scale from 0 to 9, with 9 being the highest level of proficiency. Scores are reported in whole and half bands, 
                               and test takers receive a separate score for each of the four test components.<br>
-                              please visit my <strong>LinkedIn</strong> to find my certificate. 
+                              I have scored <strong>7.5</strong> which is <strong>C1</strong> level, please visit my <strong>LinkedIn</strong> to find my certificate. 
                             </p>
                         </div>
                       </div>
@@ -918,7 +951,7 @@
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
+                            <img src="./assets/datacamp-certif.png" style="width:100%;" class="mb-4">
                             <p class="lead text-dark">
                               Demand for data talent far exceeds the supply of qualified candidates. This has made 
                               recruiting data talent extremely difficult and competitive. 
@@ -944,7 +977,7 @@
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <img src="./assets/portfolio1.jpg" style="width:100%;" class="mb-4">
+                            <img src="./assets/ibm-certif.png" style="width:100%;" class="mb-4">
                             <p class="lead text-dark">
                               A growing number of exciting, well-paying jobs in today's security industry do 
                               not require a college degree. This Professional Certificate will give me the technical 
@@ -1005,7 +1038,7 @@
                               practicing speaking with native speakers or through language learning programs, and learning about
                               grammar and vocabulary. 
                               With dedication and practice, I have passed my IELTS test and I've proven to have the required level
-                              for my professional career. I am continuing to develop your English language skills every day.
+                              for my professional career, a proficient level of  <strong>C1</strong> . I am continuing to develop my English language skills every day.
                             </div>
                         </div>
                     </div>
@@ -1258,7 +1291,18 @@
             </div>
         </div>
     </section>
+    </div>
 
+    <div class="gamejam-page">
+      <div class="container mt-5">
+        <div class="row " style="margin-left: -10vw;">
+          <div class="col-12 col-lg-6 p-4 col-xl-6 col-xxl-6">
+            <img src="./assets/gamejam-logo.png" style="width: 300px;" >
+            <p class="display-6 text-light text-start ms-4">Personal Edition</p>
+          </div>
+        </div>
+      </div>
+    </div>  
 </body>
 
 <footer>
