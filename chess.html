@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/chess.css">
+        <link rel="stylesheet" href="./styles/loader.css">
+        <title>Chess</title>
+        <link rel="icon" href="./assets/chess/ico.png">
+    </head>
+    <body>
+            <div class="UI-screen">
+                <form class="UI-start" onsubmit=" removeUI(); createScore(); return false;">
+                    <img src="./assets/svg/Chess.svg" style="height: 80px;">
+                    <div class="welcome"> Welcome to Chess </div>
+                    <input type="text" id="name1" autocomplete="off" placeholder=" " maxlength="12" required> 
+                    <label for="name1" class="label1">First Player</label>
+                    <input type="text" id="name2" autocomplete="off" placeholder=" " maxlength="12" required>
+                    <label for="name2" class="label2">Second Player</label>
+                    <button type="submit" class="start-game">Start Game</button>
+                </form>
+
+                <div class="gameOverText">Game Over</div>
+
+                <div class="results">
+                    <div class="resultsText">Results :</div>
+
+                    <div class="resultsLeft">
+                        <div class="winnerW">Winner</div>
+                        <img src="./assets/chess/kingW.png" class="piece isSelected results" id="W">
+                    </div>
+
+                    <div class="resultsRight">
+                        <div class="winnerB">Winner</div>
+                        <img src="./assets/chess/kingB.png" class="piece isSelected results" id="B">
+                    </div>
+                    <button onclick="window.location.reload();" class="end-game">Play Again</button>
+                </div>
+            </div>
+
+            
+            <div class="table-score">
+                <div class="right-zone-B">
+                    <div class="B-name"></div>
+                    <div class="B-score">
+                    </div>
+                </div>
+                <div class="right-zone-W">
+                    <div class="W-score">
+                    </div>
+                    <div class="W-name"></div>
+                </div>
+            </div>
+            
+
+            <div class="chess-board">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+
+            <div class="loader-wrapper isActive">
+                <span class="loader" ><span class="loader-inner"></span></span>
+                <div class="loading"> Loading... </div>
+            </div>        
+            
+
+            <div class="pop-up-pawn B">
+                <img class="rook slot"src="./assets/chess/rookB.png" style="height: 40px;  margin-left: 3px;">
+                <img class="knight slot"src="./assets/chess/knightB.png" style="height: 40px; margin-left: 4px;">
+                <img class="queen slot"src="./assets/chess/queenB.png" style="height: 40px; margin-left: 4px;">
+                <img class="bishop slot"src="./assets/chess/bishopB.png" style="height: 40px; margin-left: 4px;">
+            </div>
+
+            <div class="pop-up-pawn W">
+                <img class="rook slot" src="./assets/chess/rookW.png" style="height: 40px;  margin-left: 3px;">
+                <img class="knight slot" src="./assets/chess/knightW.png" style="height: 40px; margin-left: 3px;">
+                <img class="queen slot" src="./assets/chess/queenW.png" style="height: 40px; margin-left: 3px;">
+                <img class="bishop slot" src="./assets/chess/bishopW.png" style="height: 40px; margin-left: 3px;">
+            </div>
+
+    </body>
+    
+    <script src="./src/checkMobile.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="./src/lib/gsap.js"></script>
+    <script>
+        document.querySelector('.loader-wrapper').classList.add('isActive');
+        window.onload = () => {
+            
+            document.querySelector('.loader-wrapper').classList.remove('isActive');
+        };
+        
+    </script>
+    <script src="./src/chess/UI.js"></script>
+    <script src="./src/chess/chess.js"></script>
+
+</html>

@@ -1,0 +1,83 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/samurai.css">
+    <link rel="stylesheet" href="./styles/loader.css">
+    <link rel="icon" href="./assets/samurai/ico.png">
+    <title>Samurai Fight</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .text{
+            font-family: 'Press Start 2P', cursive;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <!-- Game -->
+    
+    <div style=" margin-left: 60px; margin-top: 120px; position: relative; display: inline-block; z-index: -9;">
+
+        <div style="position: absolute;  display: flex; width: 100%; display: flex; align-items: center; padding: 20px; margin-top: -50px;">
+            
+            <div style="position: relative; border-left: 2px solid white; border-bottom: 2px solid white; border-top: 2px solid white; width: 100%; display: flex; justify-content: flex-end;">
+                <div 
+                    style="background-color: red; height: 30px; width: 100%;">
+                </div>
+
+                <div id="playerHealth" style="position: absolute; background: #831843; top: 0; right: 0; bottom: 0; width: 100%;"></div>
+            </div>
+
+
+            <div class="text" id="timer" style="background-color: black; border: 2px solid white; color: white; width: 70px; aspect-ratio: 1.5/1; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+             </div>
+            
+
+            <div style="position: relative; border-right: 2px solid white; border-bottom: 2px solid white; border-top: 2px solid white; width: 100%;">
+                <div 
+                    style="background-color: red; height: 30px; width: 100%;">
+                </div>
+
+                <div id="enemyHealth" style="position: absolute; background: #831843; top: 0; right: 0; bottom: 0; left: 0; width: 100%;"></div>
+            </div>
+        </div>
+
+
+        <div class="text" id="displayText" style=" position: absolute; color: black; align-items: center; display: none; justify-content: center; top: 0; right: 0; bottom: 0; left: 0;">
+        </div>
+        <canvas style="border-radius: 15px; margin-top: -60px; margin-left: 10px;"></canvas>
+
+
+    </div>
+
+        <!-- Game control-->
+    <button class="sound" onclick="sound()"  sound="off" ></button>
+    
+    <button  class="restart" onclick="refresh()"></button>
+
+
+    <div class="loader-wrapper">
+        <span class="loader" ><span class="loader-inner"></span></span>
+        <div class="loading"> Loading... </div>
+    </div>   
+
+</body>
+
+<script>
+    document.querySelector('.loader-wrapper').classList.add('isActive');
+        
+        window.onload = () => {
+            document.querySelector('.loader-wrapper').classList.remove('isActive');
+        };
+</script>
+<script src="./src/checkMobile.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./src/samurai/utils.js"></script>
+<script src="./src/app.js"></script>
+<script src="./src/samurai/classes.js"></script>
+<script src="./src/samurai/samurai.js"></script>

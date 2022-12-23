@@ -1,0 +1,175 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(167deg, rgba(1,0,36,1) 0%, rgba(121,9,111,1) 49%, rgba(98,0,255,1) 100%);
+}
+
+.bgs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-inline: 263px;
+    margin-left: 10px;
+    margin-top: -48.7%;
+}
+
+.bgs .city-bg{
+    position: relative;
+    width: 220px;
+    z-index: -4;
+    height: 684px; 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.img-city{
+    object-fit: cover;
+    width: 220px;
+    height: 684px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    backdrop-filter: blur(30px);
+    box-shadow: 10px 10px 35px 15px rgba(0, 0, 0, 0.7);
+}
+
+.city-bg div{
+    position: absolute;
+    z-index: 10;
+    text-decoration: none;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: large;
+    color: rgba(255, 255, 255);
+    height: 25px;
+    margin-top: 190px;
+    width: 220px;
+}
+
+.city-name{
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.city-day{
+    top: 260px;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.city-date{
+    top: 300px;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+.clocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 232px;
+    margin-left: 4.3%;
+    margin-top: 0%;
+}
+
+.clock{
+    z-index: -3;
+    position: relative;
+    pointer-events: none;
+    width: 180px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    border: 1px solid  rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 20px 35px 0px rgba(0, 0, 0, 0.9);
+}
+
+.clock .number{
+    --rotation: 0deg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    text-align: center;
+    transform: rotateZ(var(--rotation));
+}
+
+.clock .number1{--rotation: 30deg; }
+.clock .number2{--rotation: 60deg;}
+.clock .number3{--rotation: 90deg;}
+.clock .number4{--rotation: 120deg;}
+.clock .number5{--rotation: 150deg;}
+.clock .number6{--rotation: 180deg;}
+.clock .number7{--rotation: 210deg;}
+.clock .number8{--rotation: 240deg;}
+.clock .number9{--rotation: 270deg;}
+.clock .number10{--rotation: 300deg;}
+.clock .number11{--rotation: 330deg;}
+
+
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 20px;
+    aspect-ratio: 1;
+    top: 45%;
+    left: 45%;
+    border-radius: 50%; 
+
+}
+
+.clock .hand.second{
+    width: 1px;
+    height: 48%;
+    background-color: red;
+}
+
+.clock .hand.minute{
+    width: 3px;
+    height: 41%;
+    background-color: black;
+}
+
+.clock .hand.hour{
+    width: 5px;
+    height: 31%;
+    background-color: black;
+}
+
+a{
+    color: #ddd9d9;
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+
+
+::-webkit-scrollbar{
+    width: 0.2em;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-block: .2em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgb(244, 112, 112),rgb(96, 60, 238));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:  linear-gradient(rgb(244, 112, 112), rgb(251, 249, 183));
+}

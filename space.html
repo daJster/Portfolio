@@ -1,0 +1,59 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/space.css">
+    <link rel="stylesheet" href="./styles/loader.css">
+    <link rel="icon" href="./assets/space/ico.png">
+    <title>Escape Space</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .text{
+            font-family: 'Press Start 2P', cursive;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <!--default page-->
+        <div class="container">
+            
+            <div class="score-bar">Score : <div class="score-value"> 1 </div> </div>
+
+
+            <div class="health-bar">
+                <div class="heart">
+                    <img loading="lazy" src="./assets/space/HLTH.png">
+                </div>
+
+                <div class="heart">
+                    <img loading="lazy" src="./assets/space/HLTH.png">
+                </div>
+
+                <div class="heart">
+                    <img loading="lazy" src="./assets/space/HLTH.png">
+                </div>
+            </div>
+            <canvas></canvas>
+    </div>
+
+
+    <div class="loader-wrapper">
+        <span class="loader" ><span class="loader-inner"></span></span>
+        <div class="loading"> Loading... </div>
+    </div>   
+
+</body>
+
+<script>
+    document.querySelector('.loader-wrapper').classList.add('isActive');
+        
+        window.onload = () => {
+            document.querySelector('.loader-wrapper').classList.remove('isActive');
+        };
+</script>
+<script src="./src/checkMobile.js"></script>
+<script src="./src/app.js"></script>
+<script src="./src/space.js"></script>

@@ -135,3 +135,16 @@ body{
 .navbar{
   width: 100vw;
 }
+
+.game-icon{
+  background-color: rgb(245, 245, 245, .4);
+  border-radius: 5px;
+  backdrop-filter: blur(20px);
+  height: 70px;
+  transition: .2s ease-in-out;
+  aspect-ratio: 1;
+}
+
+.game-icon:hover{
+  background-color: whitesmoke;
+}

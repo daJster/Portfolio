@@ -1,0 +1,277 @@
+* {
+  box-sizing:border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  z-index: -3;
+  background: linear-gradient(180deg, #64BEFF -50%, #6e96ff 69.71%, #2a65ff 150%);
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container { 
+  position: relative;
+  z-index: -2;
+  margin-top: 20px;
+  width: 240px;
+  height: 208px;
+  background: url(../assets/coinRoom/map.png) no-repeat no-repeat;
+  transform: scale(3);
+  image-rendering: pixelated;
+}
+
+.player-info {
+  z-index: -2;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  padding: 1em;
+  display: flex;
+  gap: 0.5em;
+  align-items: flex-end
+}
+
+.player-message {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  padding: 1em;
+  display: flex;
+  gap: 0.5em;
+  align-items: flex-end
+}
+
+
+
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="message"],
+button {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 18px;
+  height: 44px;
+  border-radius: 4px;
+  outline: 0;
+}
+
+input[type="text"] {
+  outline: 0;
+  padding-left: 0.5em;
+  border: 3px solid #222034;
+  width: 150px;
+  text-transform: uppercase;
+}
+
+input[type="message"] {
+  outline: 0;
+  padding-left: 0.5em;
+  border: 3px solid #222034;
+  width: 270px;
+  text-transform: none;
+}
+
+input[type="text"]:focus, input[type="message"]:focus {
+  border-color: #f000ff;
+}
+
+
+
+button {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background: #59ff5a;
+  border: 0;
+  border-bottom: 2px solid #1e830b;
+  cursor: pointer;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+#player-mic{
+  position: absolute;
+  top: 27px;
+  left: 300px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: url(../assets/coinRoom/micON.png);
+  background-size: 40px;
+  background-repeat: no-repeat no-repeat;
+  background-position: 10px;
+}
+
+
+.popup-message{
+  position: absolute;
+  height: auto;
+  width: auto;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  border-bottom-left-radius: 0px;
+  background-color: rgb(255, 255, 255);
+  padding: 3px;
+  margin-top: -15px;
+  margin-left: 10px;
+}
+
+.popup-message.Hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+.popup-triangle{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 3px solid;
+  border-color: transparent transparent rgb(255, 255, 255) transparent;
+  transform: rotate(-45deg);
+  margin-left: -3px;
+  margin-bottom: -3px;
+}
+
+.popup-text{
+  font-size: 7px;
+  color: black;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Characters */
+.grid-cell {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+.Character {
+  transition: transform 0.4s;
+}
+.Character.you {
+  z-index: 1;
+}
+.Character.you .Character_you-arrow {
+  display: block;
+}
+.Character_you-arrow {
+  display: none;
+  position: absolute;
+  top:-18px;
+  left: 5px;
+  width: 7px;
+  height: 5px;
+  background: url(../assets/coinRoom/arrow.png) no-repeat no-repeat;
+  animation: float 800ms infinite ease-in-out;
+}
+.Character_sprite {
+  overflow: hidden;
+  top: -3px;
+  background: url(../assets/coinRoom/characters.png);
+}
+.Character[data-direction="right"] .Character_sprite {
+  background-position-x: 16px;
+}
+.Character[data-color="red"] .Character_sprite {
+  background-position-y: -16px;
+}
+.Character[data-color="orange"] .Character_sprite {
+  background-position-y: -32px;
+}
+.Character[data-color="yellow"] .Character_sprite {
+  background-position-y: -48px;
+}
+.Character[data-color="green"] .Character_sprite {
+  background-position-y: -64px;
+}
+.Character[data-color="purple"] .Character_sprite {
+  background-position-y: -80px;
+}
+.Character_shadow {
+  background: url(../assets/coinRoom/shadow.png) no-repeat no-repeat;
+}
+
+.Character_name-container {
+  position: absolute;
+  top: -12px;
+  left: -5px;
+  font-size: 5px;
+  padding: 1px 2px 1px;
+  border-radius: 3px;
+  background: #333;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.Character_coins {
+  margin-left: 1px;
+  color: gold;
+}
+
+/* Coins */
+.Coin_sprite {
+  background: url(../assets/coinRoom/coin.png) no-repeat no-repeat;
+  animation: coinFloat 0.8s linear infinite alternate-reverse;
+}
+
+.Bomb_sprite {
+  background: url(../assets/coinRoom/bomb.png) no-repeat no-repeat;
+  margin-top: 6px;
+  margin-left: 1px;
+  animation: flash 1s linear infinite alternate-reverse;
+}
+
+
+@keyframes coinFloat {
+  from { transform: translateY(0) }
+  to { transform: translateY(5px) }
+}
+
+@keyframes float {
+  0%{
+    transform: translateY(-1px)
+  }
+
+  50%{
+    transform: translateY(-4px)
+  }
+
+  100%{
+    transform: translateY(-1px)
+  }
+}
+
+@keyframes flash {
+  0%{
+    opacity: 1;
+  }
+
+  50%{
+    opacity: .7;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+.Coin_shadow {
+  background: url(../assets/coinRoom/coin-shadow.png) no-repeat no-repeat;
+}

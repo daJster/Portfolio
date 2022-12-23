@@ -1,0 +1,63 @@
+<head>
+    <link rel="stylesheet" href="./styles/view.css">
+    <link rel="stylesheet" href="./styles/loader.css">
+    <link rel="icon" href="./assets/view/ico.png">
+    <title>View around the world</title>
+    <style>
+        body{
+            background: linear-gradient(167deg, rgba(1,0,36,1) 0%, rgba(121,9,111,1) 49%, rgba(98,0,255,1) 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <img class="world-icon" loading="lazy" src="./assets/view/world-icon.png" title="world view">
+
+
+    <div class="tool-tip"></div>
+
+    <div class="help">
+        <div class="guide">
+            <div class="scroll-guide">
+                scroll
+                <img loading="lazy" src="./assets/view/scroll-guide.png" style="height: 100px; margin-left: -27px;">
+            </div>
+
+            <div class="click-guide">
+                click
+                <img loading="lazy" src="./assets/view/click-guide.jpg" style="height: 100px; margin-left: -32px; margin-top: -14px;">
+            </div>
+        </div>
+
+        <div class="swipe-guide">
+            <div class="inner-swipe">
+                swipe
+                <img loading="lazy" src="./assets/view/swipe.png" style="height: 70px; margin-left: -12px; margin-top: 8px;">
+            </div> 
+        </div>
+
+        <div class="question"><button type="button" title="Help" onclick="unfadeGuide()"><img loading="lazy" src="./assets/view/help.png" style="height: 25px;"></button></div>
+    </div>
+    
+    <div class="loader-wrapper">
+        <span class="loader" ><span class="loader-inner"></span></span>
+        <div class="loading"> Loading... </div>
+    </div>
+
+</body>
+
+<script src="./src/checkMobile.js"></script>    
+<script>
+
+    document.querySelector('.loader-wrapper').classList.add('isActive');
+    window.onload = () => {
+        document.querySelector('.loader-wrapper').classList.remove('isActive');
+    };
+</script>
+<script src="./src/view/about.js"></script>
+<script src="./src/app.js"></script>
+<script src="./src/lib/gsap.js"></script>
+<script src="./src/lib/three.js"></script>
+<script src="./src/view/data.js"></script>
+<script src="./src/view/view.js" ></script>
+

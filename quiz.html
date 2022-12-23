@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/quiz.css">
+        <link rel="stylesheet" href="./styles/loader.css">
+        <title>Math Quiz</title>
+        <link rel="icon" href="./assets/quiz/ico.png">
+    </head>
+
+    <body>
+            <button class="math-menu" title="Menu" onclick="goBack();"></button>
+
+            <div class="math-container">
+                <div class="addition">
+                    <div class="addition-text">Addition</div>
+                    <img class="addition-img" src="./assets/svg/plus.svg">
+                </div>
+                <div class="multiplication">
+                    <div class="multiplication-text">Multiplication</div>
+                    <img class="multiplication-img" src="./assets/svg/multiply.svg">
+                </div>
+                <div class="soustraction">
+                    <div class="soustraction-text">Soustraction</div>
+                    <img class="soustraction-img" src="./assets/svg/minus.svg">
+                </div>
+                <!-- <div class="division">
+                    <div class="division-text">Division</div>
+                    <img class="division-img" src="./assets/division.png">
+                </div>
+                <div class="tout-en-un">
+                    <div class="tout-en-un-text">Tout en Un</div>
+                    <img class="tout-en-un-img" src="./assets/tout-en-un.png">
+                </div> -->
+            </div>
+
+            <div class="difficulty-container">
+                <div class="star1">
+                    <div class="star1-text">Debutant</div>
+                    <div class="star1-img">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                    </div>
+                </div>
+                <div class="star2">
+                    <div class="star2-text">Amateur</div>
+                    <div class="star2-img">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                    </div>
+                </div>
+                <div class="star3">
+                    <div class="star3-text">Intermediaire</div>
+                    <div class="star3-img">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                    </div>
+                </div>
+                <div class="star4">
+                    <div class="star4-text">Expert</div>
+                    <div class="star4-img">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                        <img src="./assets/quiz/star-icon.png" style="height: 30px; aspect-ratio: 1;">
+                    </div>
+                </div>
+            </div>
+    
+            <form class="math-zone" onsubmit=" verifyAnswer(); return false;">
+                <div class="submath-zone">
+                    <div class="math-question"></div>
+                    <div class="equal-sign">=</div>
+                    <input type="text" class="math-answer" placeholder="__________" maxlength="9" required>
+                </div>
+
+                <div class="correct-answer">
+                    <div class="correct-answer-text">La reponse est :</div>
+                    <div class="correct-answer-value">10</div>
+                </div>
+
+                <button type="submit" class="submit-answer">
+                    <img src="./assets/quiz/arrow.png" style=" margin-top: 3px; height: 35px; aspect-ratio: 1; opacity: .8;" >
+                </button>
+            </form>
+
+            <div class="math-score"></div>
+
+            <div class="life-bar">
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+            </div> 
+            
+            <div class="result-screen">
+                <div class="result-zone">
+                    <div class="result-text">Resultats :</div>
+                    <div class="result-value"></div>
+                    <div style=" position: absolute; margin-left: 55px;
+                    color: rgb(0, 0, 0, .7);
+                    outline: none;
+                    padding: 10px;
+                    background: none;
+                    font-size: 1rem; 
+                    font-weight: 900;
+                    font-family: sans-serif;">Time</div>
+                    <div class="result-time"></div>
+                    <button class="try-again-button" onclick="tryAgain(); return false;">Try Again</button>
+                    
+                    <button class="screen-shot" onclick="capture();">
+                        <img src="./assets/quiz/camera.png" style="height: 40px; margin-top: 1px; margin-right: 3px;">
+                    </button>
+                </div>   
+
+            </div>
+
+  
+
+            <div class="loader-wrapper isActive">
+                <span class="loader" ><span class="loader-inner"></span></span>
+                <div class="loading"> Loading... </div>
+            </div>        
+            
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js"></script>
+    <script>
+        let ssCount = 0;
+        document.querySelector('.loader-wrapper').classList.add('isActive');
+        window.onload = () => {
+            
+            document.querySelector('.loader-wrapper').classList.remove('isActive');
+
+            setTimeout( () => {
+                document.querySelector('.math-container').classList.add('isVisible');
+            }, 200);
+        };
+        
+        function capture () {
+            html2canvas(document.body).then((canvas) => {
+                console.log('check');
+                let a = document.createElement("a");
+                a.download = "screenshot"+ssCount+".png";
+                a.href = canvas.toDataURL("image/png");
+                ssCount++;
+                a.click(); // MAY NOT ALWAYS WORK!
+            });
+        }
+
+    </script>
+    <script src="./src/checkMobile.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="./src/quiz.js"></script>
+</html>

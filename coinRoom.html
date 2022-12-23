@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./styles/loader.css">
+    <link rel="stylesheet" href="./styles/coinRoom.css">
+    <link rel="icon" href="./assets/coinRoom/ico.png">
+    <title>Coin Room</title>
+</head>
+<body>
+    <div class="loader-wrapper isActive">
+        <span class="loader" ><span class="loader-inner"></span></span>
+        <div class="loading"> Loading... </div>
+    </div>   
+
+    <!-- Start coin Room project -->
+
+    <div class="game-container">
+    </div>
+
+
+
+
+    <div class="player-info">
+      <div>
+        <label for="player-name">Your Name</label>
+        <input id="player-name" maxlength="10" type="text" />
+      </div>
+      <div>
+        <button id="player-color">Change Skin</button>
+      </div>
+      <div>
+        <button id="player-mic" class='ON' onclick = "updateButtonStyle();"></button>
+      </div>
+    </div>
+
+    <div class="player-message">
+        <div>
+            <button id="player-send">Send</button>
+          </div>
+        <div>
+          <input id="player-text" maxlength="25" type="message" placeholder="Message"/>
+        </div>
+        
+    </div>
+
+    
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>  
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script>
+    // FIREBASE
+    // NOTE - INCLUDE YOUR FIREBASE CONFIG HERE FOR ANYTHING TO WORK:
+    const firebaseConfig = {
+        apiKey: "AIzaSyADO7ZLAtYNIP5UeippKmeJ6_6OTofosgo",
+        authDomain: "jadelkarchiwebsite.firebaseapp.com",
+        databaseURL: "https://jadelkarchiwebsite-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "jadelkarchiwebsite",
+        storageBucket: "jadelkarchiwebsite.appspot.com",
+        messagingSenderId: "343650622065",
+        appId: "1:343650622065:web:e203fefd3ba3c753ec99d0",
+        measurementId: "G-ETN31L9F6M"
+      };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+    document.querySelector('.loader-wrapper').classList.add('isActive');
+    window.onload = () => {
+        document.querySelector('.loader-wrapper').classList.remove('isActive');
+    };
+</script>
+
+<script src="./src/keyPressListener.js"></script>
+<script src="./src/checkMobile.js"></script>
+<script src="./src/coinRoom.js"></script>
+<script src="./src/app.js"></script>
+</html>

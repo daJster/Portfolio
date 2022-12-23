@@ -1,0 +1,455 @@
+/*Master styles*/
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    100%{
+        opacity: 0;
+    }
+    0%{
+        opacity: 1;
+    }
+}
+body{
+    margin: 0%;
+    margin-left: 0%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(167deg, rgba(1,0,36,1) 0%, rgba(121,9,111,1) 49%, rgba(98,0,255,1) 100%);
+    overflow: hidden;
+    overflow-y: hidden;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 6.5%;
+    position: absolute;
+    top: 0px;
+    width: 86%;
+    background-repeat: no-repeat;
+    background: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 25px 0px rgb(0, 0, 0, 0.5);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: .2s ease-out;
+}
+
+
+footer{
+    position: absolute;
+    display: block;
+    top: 66%;
+}
+
+.container-end{
+    display: grid;
+    position: fixed;
+    grid-template-columns: 1fr;
+    margin-left: 40%;
+    margin-top: 15.6%;
+    height: 5%;
+    width: 15%;
+    background: rgb(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 25px 0px rgb(0, 0, 0, 0.8);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/*Nav styles*/
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    background: rgb(0, 0, 0, 0.2);
+    margin: 1%;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+.left-side{
+    display: flex;
+}
+
+/*Nav bar*/
+
+.flex{
+    display: flex;
+    gap: var(--gap, 2rem);
+}
+
+.primary-navigation {
+    list-style: none;
+    padding: 20px;
+    --gap: 1.5em;
+    position: absolute;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 0.6%;
+    margin-left: -9.3%;
+    margin-top: 3.15%;
+    align-items: center;
+}
+
+.primary-navigation[data-visible="false"]{  /* fade-out */
+    transition: 0.6s;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    background: transparent;
+    text-decoration: transparent;
+}
+
+.primary-navigation[data-visible="true"]{
+    transition: 0.6s;
+    z-index: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    backdrop-filter: blur(20px);
+    background: rgb(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.7);
+}
+
+.primary-navigation a{
+    text-decoration: none;
+    padding: 0px 10px;
+    display: inline-block;
+    color: #ddd9d9;
+}
+
+.primary-navigation a:hover{
+    transition: 0.6s;
+    text-decoration: none;
+    color: springgreen;
+}
+
+.mobile-nav-toggle{
+    position: relative;
+    background:  rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: none;
+    margin-left: 0%;
+    width: 5rem;
+    height: 1.6rem;
+}
+
+.mobile-nav-toggle:hover{
+    cursor: pointer;
+    transition: 0.6s;
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+/*End Nav bar*/
+
+.bottom-side{
+    display: flex;
+}
+
+.right-side{
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.right-side a{
+    padding: 1em 1.5em;
+    color: #0b0839;
+    text-decoration: none;
+}
+
+.right-side a:hover{
+    transition: 0.4s;
+    text-shadow: 1px 0 10px #0b0839;
+}
+
+.nav-wrapper > .left-side > div{
+    margin-right: 25%;
+    font-size: 0.9em;
+    text-transform: uppercase;    
+}
+
+.nav-link-wrapper{
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.1s;
+}
+
+.nav-link-wrapper a{
+    color: #ddd9d9;
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+.nav-link-wrapper:hover{
+    border-bottom: 1px solid #0b0839;
+}
+
+.nav-link-wrapper a:hover{
+    color: #0b0839;
+}
+
+.active-nav-link{
+    border-bottom: 1px solid #0b0839;
+}
+
+
+.active-nav-link a{
+    color: #0b0839 !important;
+}
+
+/*Portfolio styles*/
+
+.portfolio-items-wrapper{
+    display: grid;
+    margin-left: 0.3%;
+    margin-top: 0%;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.portfolio-item-wrapper{
+    position: relative;
+    cursor: pointer;
+}
+
+.protfolio-img-background{
+    height: 180px;
+    width: 99%;
+    margin-bottom: 6px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.img-text-wrapper{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.logo-wrapper img{
+    margin-top: 7%;
+    width: 80%;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+
+.img-text-wrapper .subtitle{
+    color: transparent;
+    transition: 0.2s;
+}
+
+.img-text-wrapper:hover .subtitle{
+    font-weight: 500;
+    color: springgreen;
+}
+
+.img-darken{
+    transition: 0.1s;
+    z-index: -99;
+    filter: brightness(40%) blur(1px);
+}
+
+.img-brighten{
+    transition: 0.1s;
+    z-index: -99;
+    filter: brightness(100%) blur(0px);
+}
+
+/*About styles*/
+
+.two-column-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-img-wrapper img{
+    width: 100%;
+}
+
+.profile-content-wrapper{
+    padding: 2%;
+}
+
+/*Contact modal styles*/
+
+.contact-us a{
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    z-index: 3;
+    background:  transparent;
+    cursor: pointer;
+    color: #0b0839;
+    font-weight: 500;
+    border: none;
+    margin-left: 0%;
+    width: 5.6rem;
+    height: 1.6rem;
+    left: 29%;
+}
+
+form{
+    margin: 0;
+    margin-left: 36%;
+    margin-top: 10%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 25px 0px rgb(0, 0, 0, 0.5);
+    padding: 0.5% 1%;
+    width: 300px;
+    height: 400px;
+    max-width: 600px;
+    border-radius: 15px;
+}
+
+
+form h3{
+    color: #555;
+    font-weight: 800;
+    margin-bottom: 1%;
+}
+
+form input, form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+}
+
+form button{
+    padding: 10px;
+    background: springgreen;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 5px auto 0px;
+    border-radius: 10px;
+}
+
+#pop-up-container{
+    width: 98.6%;
+    height: 100%;
+    display: block;
+    inset: 0;
+}
+
+#pop-up-container[open="false"]{
+    pointer-events: none;
+    z-index: -1;
+    animation: fade-out 1s forwards;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+
+#pop-up-container[open="true"]{
+    animation: fade-in 1s forwards;
+    z-index: 5;
+    margin: 0px;
+    display: flex;
+    visibility: visible;
+    position: absolute;
+    opacity: 1;
+}
+
+.pop-up-close{
+    text-decoration: none;
+    position: absolute;
+    font-weight: 1000;
+    font-size: 30px;
+    color: black;
+    display: flex;
+    margin-top: 0%;
+    margin-left: 18%;
+}
+
+
+/******Game controls******/
+.sound{
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    background-color: transparent;
+    background-image: url('../assets/samurai/no-sound-icon.jpg');
+    background-size: cover;    
+    aspect-ratio: 1;
+    border-radius: 10px;
+    left: 10px;
+    top: 30%;
+}
+
+.sound:hover{
+    transition: 0.2s;
+    backdrop-filter: blur(10px) ;
+    background-color: transparent;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.8);
+}
+
+.restart{
+    position: absolute;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-image: url('../assets/samurai/restart.png');
+    background-size: contain;
+    background-color: transparent;
+    border-radius: 10px;
+    left: 5px;
+    top: 40%;
+}
+
+.restart:hover{
+    transition: 0.2s;
+    backdrop-filter: blur(10px) ;
+    background-color: transparent;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.8);
+}
+
+
+/*************Scroll bar**********/
+
+::-webkit-scrollbar{
+    width: 0.2em;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-block: .2em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgb(244, 112, 112),rgb(96, 60, 238));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:  linear-gradient(rgb(244, 112, 112), rgb(251, 249, 183));
+}

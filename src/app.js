@@ -77,3 +77,106 @@ function modulo(a , b){
         return a%b;
     }
 }
+
+
+// OLD APP CODE
+
+const container = document.querySelector(".container");
+const portfolioItems = document.querySelectorAll(".portfolio-item-wrapper");
+portfolioItems.forEach( (portfolioItem) => {
+    portfolioItem.addEventListener("mouseover", () => {
+        portfolioItem.childNodes[1].classList.remove("img-brighten");
+        portfolioItem.childNodes[1].classList.add("img-darken");
+    });
+});
+
+portfolioItems.forEach( (portfolioItem) => {
+    portfolioItem.addEventListener("mouseout", () => {
+        portfolioItem.childNodes[1].classList.add("img-brighten");
+    });
+});
+
+const primaryNav = document.querySelector(".primary-navigation");
+const navToggle = document.querySelector(".mobile-nav-toggle");
+
+container.addEventListener('click', (e) => {
+    if ( e.target.nodeName === "DIV"){
+            primaryNav.setAttribute("data-visible", false);
+            portfolioItems.forEach( (portfolioItem) => {
+                portfolioItem.style.zIndex = "0";
+            });
+    }
+});
+
+navToggle.addEventListener("click", () => {
+    const visiblilty = primaryNav.getAttribute("data-visible");
+    if ( visiblilty === "false" ){
+        primaryNav.setAttribute("data-visible", true);
+        portfolioItems.forEach( (portfolioItem) => {
+            portfolioItem.style.zIndex = "-1";
+        });
+    }
+    else if ( visiblilty === "true"){
+        primaryNav.setAttribute("data-visible", false);
+        portfolioItems.forEach( (portfolioItem) => {
+            portfolioItem.style.zIndex = "0";
+        });
+    }
+});
+
+const popUp = document.querySelector("#pop-up-container");
+const touchButton = document.querySelector(".contact-us a");
+const closeButton = document.querySelector(".pop-up-close");
+const sendButton = document.querySelector(".form button");
+
+
+if (popUp){
+    popUp.addEventListener('click', (e) => {
+        if ( e.target.nodeName === "DIV"){
+            container.style.filter = "blur(0px)";
+            popUp.setAttribute("open", false);
+        }
+    });
+}
+
+if (touchButton){
+    touchButton.addEventListener('click', () => {
+        const state = popUp.getAttribute("open");
+        if ( state === "true" ){
+            container.style.filter = "blur(0px)";
+            popUp.setAttribute("open", false);
+        }
+        else if (state === "false"){
+            popUp.setAttribute("open", true);
+            container.style.filter = "blur(10px)";
+        }
+    });
+}
+
+if (closeButton){
+    closeButton.addEventListener('click', () => {
+        const state = popUp.getAttribute("open");
+        if ( state === "true" ){
+            container.style.filter = "blur(0px)";
+            popUp.setAttribute("open", false);
+        }
+        else if (state === "false"){
+            popUp.setAttribute("open", true);
+            container.style.filter = "blur(10px)";
+        }
+    });
+}
+
+if (sendButton){
+    sendButton.addEventListener('click', () => {
+        const state = popUp.getAttribute("open");
+        if ( state === "true" ){
+            container.style.filter = "blur(0px)";
+            popUp.setAttribute("open", false);
+        }
+        else if (state === "false"){
+            popUp.setAttribute("open", true);
+            container.style.filter = "blur(10px)";
+        }
+    });
+}
