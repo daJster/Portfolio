@@ -14,11 +14,12 @@ function launchGJ(){
     navbarCollapse.classList.remove("show");
     document.location.href = "#";
     document.location.href = "#gamejam";
+    gameJam.classList.remove("d-none");
     setTimeout( () => {
         gameJam.classList.add("isActive");
         portfolio.classList.remove("isActive");
         controlnav(disable);
-    }, 550)
+    }, 550);
 }
 
 function closeGJ(){
@@ -27,6 +28,9 @@ function closeGJ(){
     gameJam.classList.remove("isActive");
     portfolio.classList.add("isActive");
     controlnav(enable);
+    setTimeout( () => {
+        gameJam.classList.add("d-none");
+    }, 750);
 }
 
 
