@@ -31,8 +31,15 @@ body{
 .myPhoto{
     border-radius: 50%;
     border: 6px solid lightgray;
+    box-shadow: 0 0 103px 7px rgb(0, 0, 0, .3);
+    transition: 5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-delay: .4s;
 }
 
+.myPhoto:hover{
+  box-shadow: 0 0 103px 12px rgb(0, 0, 0, .8);
+}
 
 .page{
     height: 100vh;
@@ -79,14 +86,21 @@ body{
 #signature{
   stroke-dasharray: 972;
   stroke-dashoffset: 972;
-  animation: sign 2s ease-out;
-  animation-delay: .8s;
+  animation: sign 10s infinite;
+  animation-timing-function: cubic-bezier(.13,.53,.45,.85);
+  animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 
 @keyframes sign {
-  to {
+  0%{
+    stroke-dashoffset: 972;
+  }
+  50%{
     stroke-dashoffset: 0;
+  }
+  100%{
+    stroke-dashoffset: 972;
   }
 }
 
@@ -106,9 +120,6 @@ body{
   background: linear-gradient(167deg, rgba(33,36,0,1) 0%, rgba(121,24,9,1) 36%, rgba(255,205,0,1) 100%);
 }
 
-.gamejam-page.isActive{
-}
-
 .gamejam-page{
   background: linear-gradient(167deg, rgba(1,0,36,1) 0%, rgba(121,9,111,1) 49%, rgba(98,0,255,1) 100%);
   position: absolute;
@@ -121,6 +132,7 @@ body{
 
 .gamejam-page.isActive{
   transform: translateX(-100vw);
+  transition-timing-function: ease-in-out;
 }
 
 .portfolio{
@@ -130,6 +142,7 @@ body{
 
 .portfolio.isActive{
   transform: translateX(0);
+  transition-timing-function: ease-in-out;
 }
 
 .navbar{

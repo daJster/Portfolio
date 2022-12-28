@@ -6,7 +6,37 @@ const portfolio = document.querySelector(".portfolio");
 const Links = document.querySelectorAll(".nav-link");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 const navbarCollapse = document.querySelector(".navbar-collapse")
+const paragraphs = document.querySelectorAll(".mode-text");
+const switchModeBtn = document.querySelector(".screen-mode.btn");
 const [enable, disable] = [true, false];
+let lightMode = true;
+
+
+function switchLight(){
+    function inSwitchLight(paragraph){
+        if (lightMode === true){
+            paragraph.style.color = "whitesmoke";
+            document.querySelector(".signature").setAttribute("stroke", "whitesmoke");
+            document.querySelector("body").style.backgroundColor = "#6e6e60";
+            switchModeBtn.classList.remove("bg-secondary");
+            switchModeBtn.classList.add("bg-light");
+        } else {
+            paragraph.style.color = "#292b2c";
+            document.querySelector(".signature").setAttribute("stroke", "#292b2c");
+            document.querySelector("body").style.backgroundColor = "whitesmoke";
+            switchModeBtn.classList.add("bg-secondary");
+            switchModeBtn.classList.remove("bg-light");
+        }
+    }
+
+    Object.keys(paragraphs).forEach( (key) => {
+        inSwitchLight(paragraphs[key]);
+    });
+
+    lightMode = lightMode ? false : true;
+
+
+}
 
 function launchGJ(){
     document.querySelector("body").style.overflowY = "hidden";
@@ -112,7 +142,7 @@ container.addEventListener('click', (e) => {
     }
 });
 
-navToggle.addEventListener("click", () => {
+navToggle?.addEventListener("click", () => {
     const visiblilty = primaryNav.getAttribute("data-visible");
     if ( visiblilty === "false" ){
         primaryNav.setAttribute("data-visible", true);
