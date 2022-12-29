@@ -133,7 +133,7 @@ portfolioItems.forEach( (portfolioItem) => {
 const primaryNav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 
-container.addEventListener('click', (e) => {
+container?.addEventListener('click', (e) => {
     if ( e.target.nodeName === "DIV"){
             primaryNav.setAttribute("data-visible", false);
             portfolioItems.forEach( (portfolioItem) => {
