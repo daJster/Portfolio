@@ -25,6 +25,9 @@ html{
 }
 
 body{
+  background: url(../assets/svg/background.svg);
+  background-size: 100%;
+  background-repeat: no-repeat repeat;
   overflow-x: hidden;
 }
 
@@ -160,4 +163,15 @@ body{
 
 .game-icon:hover{
   background-color: whitesmoke;
+}
+
+
+
+.sign-in-screen{
+  box-shadow: 0 0 53px 13px darkgray;
+  transition: .4s ease-in-out;
+}
+
+.sign-in-screen:hover{
+  box-shadow: 0 0 63px 17px rgb(0, 0, 0, .6);
 }
