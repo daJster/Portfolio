@@ -28,32 +28,32 @@
     </nav>
 
     <div class="row justify-content-center" style="margin-top: 15vh;">
-        <div class="sign-in-screen container text-primary col-md-4 col-lg-4 col-xl-4 col-10 fw-bold bg-primary rounded-4" style="height: 70%;">
+        <div class="sign-in-screen container text-light col-md-4 col-lg-4 col-xl-4 col-10 fw-bold bg-dark rounded-4" style="height: 70%;">
             <form class="row g-2">
                 <div class="col-12 p-2 text-center ">
-                    <p class="lead login-mode display-1 text-center text-dark">Log In</p>                    
-                    <p class="lead signin-mode d-none display-1 text-center text-dark">Sign In</p>                    
+                    <p class="lead login-mode display-1 text-center text-light">Log In</p>                    
+                    <p class="lead signin-mode d-none display-1 text-center text-light">Sign In</p>                    
                 </div>
 
                 <div class="col-12 p-2 text-center ">
-                    <input  class="text-start email rounded border border-decoration-none p-2" style="width: 100%" required type="email" placeholder="Email">
+                    <input  class="text-start email lead text-dark rounded border border-decoration-none p-2" style="font-weight:400; width: 100%" required type="email" placeholder="Email">
                 </div>
 
                 <div class="col-12 p-2 text-center ">
-                    <input  class="text-start password rounded border border-decoration-none p-2" style="width: 100%" minlength="8" 
+                    <input  class="text-start password lead text-dark rounded border border-decoration-none p-2" style="font-weight:400; width: 100%" minlength="8" 
                     required type="password" placeholder="Password">
                 </div>
 
                 <div class="col-12 p-2 text-center ">
                     <button onclick="logInEmailAndPassword(); return false;" 
-                    class="lead login-mode text-center btn btn-dark text-light"  style="width: 70%" type="submit">Log In</button>
+                    class="lead login-mode text-center btn btn-primary text-light"  style="width: 70%" type="submit">Log In</button>
 
                     <button onclick="signInEmailAndPassword(); return false;" 
-                    class="lead signin-mode d-none text-center btn btn-dark text-light"  style="width: 70%" type="submit">Sign In</button>
+                    class="lead signin-mode d-none text-center btn btn-primary text-light"  style="width: 70%" type="submit">Sign In</button>
                 </div>
 
                 <div class="col-12 p-2 text-center ">
-                    <p class="lead text-dark fw-bold" style="font-size: 2.5vh;">Or use</p>
+                    <p class="lead text-light fw-bold" style="font-size: 2.5vh;">Or use</p>
                     <div class="row justify-content-center">
                         <div class="col-3">
                             <button onclick="signInGoogle();" type="button" class="btn bg-light p-1 rounded-2">
@@ -70,10 +70,10 @@
                 </div>
 
                 <div class="col-12 p-2 text-center ">
-                    <p class="lead login-mode text-dark" style="font-size: 2.5vh;">You don't have an account ?</p>
-                    <p class="lead signin-mode d-none text-dark" style="font-size: 2.5vh;">You already have an account ?</p>
-                    <button type="button" onclick="window.changeToSignIn(true);" class="lead btn login-mode btn-link text-center text-dark">Sign In</button>  
-                    <button type="button" onclick="window.changeToSignIn(false);" class="lead btn signin-mode d-none btn-link text-center text-dark">Log In</button>  
+                    <p class="lead login-mode text-light" style="font-size: 2.5vh;">You don't have an account ?</p>
+                    <p class="lead signin-mode d-none text-light" style="font-size: 2.5vh;">You already have an account ?</p>
+                    <button type="button" onclick="window.changeToSignIn(true);" class="lead btn login-mode btn-link text-center text-light">Sign In</button>  
+                    <button type="button" onclick="window.changeToSignIn(false);" class="lead btn signin-mode d-none btn-link text-center text-light">Log In</button>  
                 </div>
             </form>
         </div>

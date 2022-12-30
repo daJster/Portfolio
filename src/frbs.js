@@ -36,6 +36,8 @@ const signinEls = document.querySelectorAll(".signin-mode");
 const loginEls = document.querySelectorAll(".login-mode");
 
 window.changeToSignIn = function changeToSignIn(b){
+    const signInScreen = document.querySelector(".sign-in-screen");
+
     function dNoneEls(els, t){
         Object.keys(els).forEach( (key) => {
             const el = els[key];
@@ -47,13 +49,21 @@ window.changeToSignIn = function changeToSignIn(b){
         });
     }
     if (b){
+        signInScreen.classList.add("fade");
         dNoneEls(signinEls, false);
         dNoneEls(loginEls, true);
-        document.querySelector("title").innerHTML="Sign in"
+        document.querySelector("title").innerHTML="Sign in";
+        setTimeout( () => {
+            signInScreen.classList.remove("fade");
+        }, 200);
     } else {
+        signInScreen.classList.add("fade");
         dNoneEls(signinEls, true);
         dNoneEls(loginEls, false);
-        document.querySelector("title").innerHTML="Log in"
+        document.querySelector("title").innerHTML="Log in";
+        setTimeout( () => {
+            signInScreen.classList.remove("fade");
+        }, 200);
     }
 }
 
