@@ -32,14 +32,34 @@ window.auth = getAuth(app);
 window.providerGoogle = new GoogleAuthProvider();
 window.providerGithub = new GithubAuthProvider();
 
+const signinEls = document.querySelectorAll(".signin-mode");
+const loginEls = document.querySelectorAll(".login-mode");
 
-window.changeToSignIn = function changeToSignIn(){
-    console.log("changed");
+window.changeToSignIn = function changeToSignIn(b){
+    function dNoneEls(els, t){
+        Object.keys(els).forEach( (key) => {
+            const el = els[key];
+            if(t){
+                el.classList.add("d-none");
+            } else {
+                el.classList.remove("d-none");
+            }
+        });
+    }
+    if (b){
+        dNoneEls(signinEls, false);
+        dNoneEls(loginEls, true);
+        document.querySelector("title").innerHTML="Sign in"
+    } else {
+        dNoneEls(signinEls, true);
+        dNoneEls(loginEls, false);
+        document.querySelector("title").innerHTML="Log in"
+    }
 }
 
 
 // Authenticating users with Email + Password
-window.SignInEmailAndPassword = function SignInEmailAndPassword(email, password){
+window.signInEmailAndPassword = function signInEmailAndPassword(email, password){
     //** Creating the user's account */
     createUserWithEmailAndPassword(auth, email, password)
         .then( (userCredential) => {  // returns a promise 
@@ -47,6 +67,7 @@ window.SignInEmailAndPassword = function SignInEmailAndPassword(email, password)
             // signed in
             const user = userCredential.user;
             console.log(user);
+            document.location.href = "portfolio.html";
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -57,7 +78,7 @@ window.SignInEmailAndPassword = function SignInEmailAndPassword(email, password)
 }
 
 
-window.LogInEmailAndPassword = function LogInEmailAndPassword(email, password){
+window.logInEmailAndPassword = function logInEmailAndPassword(email, password){
     //**log in if the user already exists */
     signInWithEmailAndPassword(auth, email, password)
         .then( (userCredential) => {  // returns a promise 
@@ -65,6 +86,7 @@ window.LogInEmailAndPassword = function LogInEmailAndPassword(email, password){
             // signed in
             const user = userCredential.user;
             console.log(user);
+            document.location.href = "portfolio.html";
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -76,7 +98,7 @@ window.LogInEmailAndPassword = function LogInEmailAndPassword(email, password){
 
 
 // Authenticating using Google service
-window.SignInGoogle = function SignInGoogle(){
+window.signInGoogle = function signInGoogle(){
     signInWithPopup(auth, providerGoogle)
         .then((result) => {
     
@@ -87,6 +109,8 @@ window.SignInGoogle = function SignInGoogle(){
         const user = result.user;
     
         console.log(user);
+        document.location.href = "portfolio.html";
+
         // ...
         }).catch((error) => {
         // Handle Errors here.
@@ -103,10 +127,40 @@ window.SignInGoogle = function SignInGoogle(){
 }
 
 
-window.LogOut = function LogOut(){
+// Authenticating using Github service
+window.signInGithub = function signInGithub(){
+    signInWithPopup(auth, providerGithub)
+        .then((result) => {
+    
+        // This gives you a Github Access Token. You can use it to access the Google API.
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+    
+        console.log(user);
+        document.location.href = "portfolio.html";
+
+        // ...
+        }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GithubAuthProvider.credentialFromError(error);
+    
+        console.log(errorCode + "\n errMsg :\t" + errorMessage + "\n credentialERR :\t" + credential);
+        // ...
+        });
+}
+
+window.logOut = function logOut(){
     signOut(auth).then(() => {
-        // Sign-out successful.
-      }).catch((error) => {
+        document.location.href = "signIn.html";
+    }).catch((error) => {
         // An error happened.
+        console.log(error.message);
       });
 }

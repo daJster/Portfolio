@@ -173,5 +173,5 @@ body{
 }
 
 .sign-in-screen:hover{
-  box-shadow: 0 0 63px 17px rgb(0, 0, 0, .6);
+  box-shadow: 0 0 63px 17px rgb(0, 0, 0, .4);
 }
