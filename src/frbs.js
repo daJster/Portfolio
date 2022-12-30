@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
 import { getAuth, 
     createUserWithEmailAndPassword, 
@@ -7,6 +7,9 @@ import { getAuth,
     GoogleAuthProvider,
     GithubAuthProvider,
     signInWithPopup,
+    browserSessionPersistence,
+    inMemoryPersistence,
+    setPersistence,
     signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -34,6 +37,7 @@ window.providerGithub = new GithubAuthProvider();
 
 const signinEls = document.querySelectorAll(".signin-mode");
 const loginEls = document.querySelectorAll(".login-mode");
+window.currentUser = null;
 
 window.changeToSignIn = function changeToSignIn(b){
     const signInScreen = document.querySelector(".sign-in-screen");
@@ -78,8 +82,8 @@ window.signInEmailAndPassword = function signInEmailAndPassword(){
 
             // signed in
             const user = userCredential.user;
-            console.log(user);
-            document.location.href = "portfolio.html";
+            window.currentUser = user;
+            window.showPortfolio(true);
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -99,8 +103,8 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
 
             // signed in
             const user = userCredential.user;
-            console.log(user);
-            document.location.href = "portfolio.html";
+            window.currentUser = user;
+            window.showPortfolio(true);
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -122,8 +126,8 @@ window.signInGoogle = function signInGoogle(){
         // The signed-in user info.
         const user = result.user;
     
-        console.log(user);
-        document.location.href = "portfolio.html";
+        window.currentUser = user;
+        window.showPortfolio(true);
 
         // ...
         }).catch((error) => {
@@ -152,8 +156,8 @@ window.signInGithub = function signInGithub(){
         // The signed-in user info.
         const user = result.user;
     
-        console.log(user);
-        document.location.href = "portfolio.html";
+        window.currentUser = user;
+        window.showPortfolio(true);
 
         // ...
         }).catch((error) => {
@@ -169,6 +173,43 @@ window.signInGithub = function signInGithub(){
         // ...
         });
 }
+
+window.showPortfolio = function showPortfolio(b){
+    if (b){
+        document.querySelector("title").innerHTML = "Jad Elkarchi";
+        signScreen.classList.add("d-none");
+        portfolioScreen.classList.remove("d-none");
+        Object.keys(footerEls).forEach( (key) => {
+            const footerEl = footerEls[key];
+            footerEl.classList.remove("d-none");
+        });
+    } else {
+        document.querySelector("title").innerHTML = "Log in";
+        signScreen.classList.remove("d-none");
+        portfolioScreen.classList.add("d-none");
+        Object.keys(footerEls).forEach( (key) => {
+            const footerEl = footerEls[key];
+            footerEl.classList.add("d-none");
+        });
+    }
+}
+
+const auth = getAuth();
+setPersistence(auth, inMemoryPersistence)
+  .then(() => {
+    const providerGoogle = new GoogleAuthProvider();
+    // In memory persistence will be applied to the signed in Google user
+    // even though the persistence was set to 'none' and a page redirect
+    // occurred.
+    return signInWithPopup(auth, providerGoogle);
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+
 
 window.logOut = function logOut(){
     signOut(auth).then(() => {

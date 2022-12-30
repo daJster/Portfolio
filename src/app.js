@@ -7,6 +7,9 @@ const Links = document.querySelectorAll(".nav-link");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 const navbarCollapse = document.querySelector(".navbar-collapse")
 const paragraphs = document.querySelectorAll(".mode-text");
+const signScreen = document.querySelector(".SIGN-SCREEN");
+const portfolioScreen = document.querySelector(".PORTFOLIO-SCREEN");
+const footerEls = document.querySelectorAll(".footer");
 const switchModeBtn = document.querySelector(".screen-mode.btn");
 const [enable, disable] = [true, false];
 let lightMode = true;
@@ -135,7 +138,7 @@ const navToggle = document.querySelector(".mobile-nav-toggle");
 
 container?.addEventListener('click', (e) => {
     if ( e.target.nodeName === "DIV"){
-            primaryNav.setAttribute("data-visible", false);
+            primaryNav?.setAttribute("data-visible", false);
             portfolioItems.forEach( (portfolioItem) => {
                 portfolioItem.style.zIndex = "0";
             });

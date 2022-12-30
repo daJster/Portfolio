@@ -169,12 +169,12 @@ body{
 
 .sign-in-screen{
   opacity: 1;
-  box-shadow: 0 0 53px 13px darkgray;
+  box-shadow: 0 0 53px 13px rgb(0, 0, 0, .4);
   transition: .2s ease-in-out;
 }
 
 .sign-in-screen:hover{
-  box-shadow: 0 0 63px 17px rgb(0, 0, 0, .4);
+  box-shadow: 0 0 83px 37px rgb(0, 0, 0, .4);
 }
 
 .sign-in-screen.fade{
