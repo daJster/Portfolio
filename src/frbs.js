@@ -127,6 +127,7 @@ window.signInGoogle = function signInGoogle(){
         const user = result.user;
     
         window.currentUser = user;
+        console.log(window.currentUser);
         window.showPortfolio(true);
 
         // ...
@@ -178,7 +179,14 @@ window.showPortfolio = function showPortfolio(b){
     if (b){
         document.querySelector("title").innerHTML = "Jad Elkarchi";
         signScreen.classList.add("d-none");
+        Object.keys(signScreen.children).forEach( (key) => {
+            signScreen.children[key].classList.add("d-none");
+        });
+
         portfolioScreen.classList.remove("d-none");
+        Object.keys(portfolioScreen.children).forEach( (key) => {
+            portfolioScreen.children[key].classList.remove("d-none");
+        });
         Object.keys(footerEls).forEach( (key) => {
             const footerEl = footerEls[key];
             footerEl.classList.remove("d-none");
@@ -186,7 +194,13 @@ window.showPortfolio = function showPortfolio(b){
     } else {
         document.querySelector("title").innerHTML = "Log in";
         signScreen.classList.remove("d-none");
+        Object.keys(signScreen.children).forEach( (key) => {
+            signScreen.children[key].classList.remove("d-none");
+        });
         portfolioScreen.classList.add("d-none");
+        Object.keys(portfolioScreen.children).forEach( (key) => {
+            portfolioScreen.children[key].classList.add("d-none");
+        });
         Object.keys(footerEls).forEach( (key) => {
             const footerEl = footerEls[key];
             footerEl.classList.add("d-none");
@@ -194,7 +208,6 @@ window.showPortfolio = function showPortfolio(b){
     }
 }
 
-const auth = getAuth();
 setPersistence(auth, inMemoryPersistence)
   .then(() => {
     const providerGoogle = new GoogleAuthProvider();
@@ -207,15 +220,19 @@ setPersistence(auth, inMemoryPersistence)
     // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
+
+    console.log(error.message);
   });
 
 
 
 window.logOut = function logOut(){
     signOut(auth).then(() => {
-        document.location.href = "signIn.html";
+        window.showPortfolio(false);
     }).catch((error) => {
         // An error happened.
         console.log(error.message);
       });
 }
+
+window.showPortfolio(false);
