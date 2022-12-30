@@ -40,15 +40,16 @@
                 </div>
 
                 <div class="col-12 p-2 text-center ">
-                    <input  class="text-start password rounded border border-decoration-none p-2" style="width: 100%" required type="password" placeholder="Password">
+                    <input  class="text-start password rounded border border-decoration-none p-2" style="width: 100%" minlength="8" 
+                    required type="password" placeholder="Password">
                 </div>
 
                 <div class="col-12 p-2 text-center ">
-                    <button onclick="logInEmailAndPassword();" 
-                    class="lead login-mode text-center btn btn-dark text-light"  style="width: 70%" type="button"  minlength="8">Log In</button>
+                    <button onclick="logInEmailAndPassword(); return false;" 
+                    class="lead login-mode text-center btn btn-dark text-light"  style="width: 70%" type="submit">Log In</button>
 
-                    <button onclick="signInEmailAndPassword();" 
-                    class="lead signin-mode d-none text-center btn btn-dark text-light"  style="width: 70%" type="button"  minlength="8">Sign In</button>
+                    <button onclick="signInEmailAndPassword(); return false;" 
+                    class="lead signin-mode d-none text-center btn btn-dark text-light"  style="width: 70%" type="submit">Sign In</button>
                 </div>
 
                 <div class="col-12 p-2 text-center ">

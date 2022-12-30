@@ -59,7 +59,9 @@ window.changeToSignIn = function changeToSignIn(b){
 
 
 // Authenticating users with Email + Password
-window.signInEmailAndPassword = function signInEmailAndPassword(email, password){
+window.signInEmailAndPassword = function signInEmailAndPassword(){
+    const email = document.querySelector(".email").value;
+    const password = document.querySelector(".password").value;
     //** Creating the user's account */
     createUserWithEmailAndPassword(auth, email, password)
         .then( (userCredential) => {  // returns a promise 
@@ -78,7 +80,9 @@ window.signInEmailAndPassword = function signInEmailAndPassword(email, password)
 }
 
 
-window.logInEmailAndPassword = function logInEmailAndPassword(email, password){
+window.logInEmailAndPassword = function logInEmailAndPassword(){
+    const email = document.querySelector(".email").value;
+    const password = document.querySelector(".password").value;
     //**log in if the user already exists */
     signInWithEmailAndPassword(auth, email, password)
         .then( (userCredential) => {  // returns a promise 
