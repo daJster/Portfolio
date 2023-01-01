@@ -19,13 +19,13 @@ function switchLight(){
     function inSwitchLight(paragraph){
         if (lightMode === true){
             paragraph.style.color = "whitesmoke";
-            document.querySelector(".signature").setAttribute("stroke", "whitesmoke");
+            document.querySelector(".signature")?.setAttribute("stroke", "whitesmoke");
             document.querySelector("body").style.backgroundColor = "#6e6e60";
             switchModeBtn.classList.remove("bg-secondary");
             switchModeBtn.classList.add("bg-light");
         } else {
             paragraph.style.color = "#292b2c";
-            document.querySelector(".signature").setAttribute("stroke", "#292b2c");
+            document.querySelector(".signature")?.setAttribute("stroke", "#292b2c");
             document.querySelector("body").style.backgroundColor = "whitesmoke";
             switchModeBtn.classList.add("bg-secondary");
             switchModeBtn.classList.remove("bg-light");

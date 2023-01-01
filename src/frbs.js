@@ -6,7 +6,7 @@ import { getAuth,
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     GithubAuthProvider,
-    signInWithPopup,
+    signInWithRedirect,
     browserSessionPersistence,
     inMemoryPersistence,
     setPersistence,
@@ -117,7 +117,7 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
 
 // Authenticating using Google service
 window.signInGoogle = function signInGoogle(){
-    signInWithPopup(auth, providerGoogle)
+    signInWithRedirect(auth, providerGoogle)
         .then((result) => {
     
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -148,7 +148,7 @@ window.signInGoogle = function signInGoogle(){
 
 // Authenticating using Github service
 window.signInGithub = function signInGithub(){
-    signInWithPopup(auth, providerGithub)
+    signInWithRedirect(auth, providerGithub)
         .then((result) => {
     
         // This gives you a Github Access Token. You can use it to access the Google API.
@@ -191,6 +191,7 @@ window.showPortfolio = function showPortfolio(b){
             const footerEl = footerEls[key];
             footerEl.classList.remove("d-none");
         });
+        document.querySelector(".gamejam-page").classList.add("d-none");
     } else {
         document.querySelector("title").innerHTML = "Log in";
         signScreen.classList.remove("d-none");
@@ -215,7 +216,7 @@ setPersistence(auth, inMemoryPersistence)
     // In memory persistence will be applied to the signed in Google user
     // even though the persistence was set to 'none' and a page redirect
     // occurred.
-    return signInWithPopup(auth, providerGoogle);
+    return signInWithRedirect(auth, providerGoogle);
   })
   .then((result) => { // duplication of code to FIX !
     
@@ -260,4 +261,4 @@ window.logOut = function logOut(){
       });
 }
 
-window.showPortfolio(false);
+window.showPortfolio(true);
