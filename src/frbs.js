@@ -261,4 +261,4 @@ window.logOut = function logOut(){
       });
 }
 
-window.showPortfolio(true);
+window.showPortfolio(false);
