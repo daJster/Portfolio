@@ -6,9 +6,7 @@ import { getAuth,
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     GithubAuthProvider,
-    signInWithRedirect,
-    signInWithPopUp,
-    getRedirectResult,
+    signInWithPopup,
     browserSessionPersistence,
     inMemoryPersistence,
     setPersistence,
@@ -119,8 +117,7 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
 
 // Authenticating using Google service
 window.signInGoogle = function signInGoogle(){
-    signInWithRedirect(auth, providerGoogle);
-    getRedirectResult(auth)
+    signInWithPopup(auth, providerGoogle)
         .then((result) => {
     
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -151,8 +148,7 @@ window.signInGoogle = function signInGoogle(){
 
 // Authenticating using Github service
 window.signInGithub = function signInGithub(){
-    signInWithRedirect(auth, providerGithub);
-    getRedirectResult(auth)
+    signInWithPopup(auth, providerGithub)
         .then((result) => {
     
         // This gives you a Github Access Token. You can use it to access the Google API.
@@ -220,7 +216,7 @@ setPersistence(auth, inMemoryPersistence)
     // In memory persistence will be applied to the signed in Google user
     // even though the persistence was set to 'none' and a page redirect
     // occurred.
-    return signInWithPopUp(auth, providerGoogle);
+    return signInWithPopup(auth, providerGoogle);
   })
   .then((result) => { // duplication of code to FIX !
     
