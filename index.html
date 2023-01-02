@@ -161,7 +161,7 @@
       </nav>
 
 
-      <div class="portfolio isActive">
+      <div class="portfolio isActive text-center">
       <section id="#" class="container container-light mt-lg-5 mt-5 pt-4 ms-lg-5">
         <div class="row mt-lg-5 ms-lg-5">
             <div class="col col-lg-4 mt-1 ms-3 text-center">
@@ -1389,11 +1389,11 @@
         </div>
       </section>
 
-      <section id="contact" class="container mt-lg-5 pt-4 ms-lg-5">
-        <div class="row mt-lg-5 ms-lg-5">
+      <section id="contact" class="container mt-lg-5 pt-4">
+        <div class="row mt-lg-5">
             <div class="col">
                 <div class="lead display-2 mode-text text-center">Contact</div>
-                <p class="lead text-center mode-text">(I prefer being contacted <strong>only</strong> via LinkedIn or via Email)</p>
+                <p class="lead text-center mode-text">(I prefer being contacted <strong>only</strong> via LinkedIn or via Form)</p>
                 <div class="container">
                   <div class="row m-2 p-2 justify-content-center">
                     
@@ -1413,9 +1413,20 @@
                     </div>
 
                     <div class="col-12 text-center">
-                      <div class="fw-bold">
-                        <div class="mt-2 mode-text" >Gmail : elkarchiee@gmail.com</div>
+                      <div class="row textarea-container">
+                        <div class="col-12 text-center">
+                          <textarea  class="text-start email lead text-dark rounded border border-decoration-none p-2" 
+                          style="font-weight:400; min-height: 150px; max-height: 300px; width: 100%; max-width: 600px;" maxlength="400" rows="3" cols="50" type="text" placeholder="How can I help you ?"></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                          <button onclick="window.sendComment();" class="btn btn-dark lead text-center border-none p-2 mt-2" style="width: 50%;">Send</button>
+                        </div>
                       </div>
+
+                      <div class="textarea-success-send">
+                        <!--img and text saying that their message was successfuly sent-->
+                      </div>
+
                     </div>
                   </div>
                 </div>

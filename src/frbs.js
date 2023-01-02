@@ -253,12 +253,20 @@ setPersistence(auth, inMemoryPersistence)
 
 
 window.logOut = function logOut(){
+    const password = document.querySelector(".password");
+    password.value = ""; 
     signOut(auth).then(() => {
         window.showPortfolio(false);
     }).catch((error) => {
         // An error happened.
         console.log(error.message);
       });
+}
+
+window.sendComment = function sendComment(){
+    const message = document.querySelector("textarea");
+    console.log("message : " + message.value);
+    message.value = "";
 }
 
 window.showPortfolio(false);
