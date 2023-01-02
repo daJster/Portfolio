@@ -7,6 +7,7 @@ import { getAuth,
     GoogleAuthProvider,
     GithubAuthProvider,
     signInWithRedirect,
+    signInWithPopUp,
     getRedirectResult,
     browserSessionPersistence,
     inMemoryPersistence,
@@ -219,8 +220,7 @@ setPersistence(auth, inMemoryPersistence)
     // In memory persistence will be applied to the signed in Google user
     // even though the persistence was set to 'none' and a page redirect
     // occurred.
-    signInWithRedirect(auth, providerGoogle);
-    return getRedirectResult(auth);
+    return signInWithPopUp(auth, providerGoogle);
   })
   .then((result) => { // duplication of code to FIX !
     
