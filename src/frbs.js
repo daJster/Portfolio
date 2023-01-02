@@ -7,6 +7,7 @@ import { getAuth,
     GoogleAuthProvider,
     GithubAuthProvider,
     signInWithRedirect,
+    getRedirectResult,
     browserSessionPersistence,
     inMemoryPersistence,
     setPersistence,
@@ -117,7 +118,8 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
 
 // Authenticating using Google service
 window.signInGoogle = function signInGoogle(){
-    signInWithRedirect(auth, providerGoogle)
+    signInWithRedirect(auth, providerGoogle);
+    getRedirectResult(auth)
         .then((result) => {
     
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -148,7 +150,8 @@ window.signInGoogle = function signInGoogle(){
 
 // Authenticating using Github service
 window.signInGithub = function signInGithub(){
-    signInWithRedirect(auth, providerGithub)
+    signInWithRedirect(auth, providerGithub);
+    getRedirectResult(auth)
         .then((result) => {
     
         // This gives you a Github Access Token. You can use it to access the Google API.
@@ -216,7 +219,8 @@ setPersistence(auth, inMemoryPersistence)
     // In memory persistence will be applied to the signed in Google user
     // even though the persistence was set to 'none' and a page redirect
     // occurred.
-    return signInWithRedirect(auth, providerGoogle);
+    signInWithRedirect(auth, providerGoogle);
+    return getRedirectResult(auth);
   })
   .then((result) => { // duplication of code to FIX !
     
