@@ -1,5 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getFirestore, 
+    collection, 
+    getDocs,
+    addDoc,
+    Timestamp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
 import { getAuth, 
     createUserWithEmailAndPassword, 
@@ -7,7 +12,6 @@ import { getAuth,
     GoogleAuthProvider,
     GithubAuthProvider,
     signInWithPopup,
-    browserSessionPersistence,
     inMemoryPersistence,
     setPersistence,
     signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
@@ -83,7 +87,9 @@ window.signInEmailAndPassword = function signInEmailAndPassword(){
             // signed in
             const user = userCredential.user;
             window.currentUser = user;
+            window.username = user.email.split("@")[0];
             window.showPortfolio(true);
+            main();
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -104,7 +110,9 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
             // signed in
             const user = userCredential.user;
             window.currentUser = user;
+            window.username = user.email.split("@")[0];
             window.showPortfolio(true);
+            main();
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -127,9 +135,9 @@ window.signInGoogle = function signInGoogle(){
         const user = result.user;
     
         window.currentUser = user;
-        console.log(window.currentUser);
+        window.username = user.email.split("@")[0];
         window.showPortfolio(true);
-
+        main();
         // ...
         }).catch((error) => {
         // Handle Errors here.
@@ -158,8 +166,9 @@ window.signInGithub = function signInGithub(){
         const user = result.user;
     
         window.currentUser = user;
+        window.username = user.email.split("@")[0];
         window.showPortfolio(true);
-
+        main();
         // ...
         }).catch((error) => {
         // Handle Errors here.
@@ -227,8 +236,9 @@ setPersistence(auth, inMemoryPersistence)
     const user = result.user;
 
     window.currentUser = user;
+    window.username = user.email.split("@")[0];
     window.showPortfolio(true);
-
+    main();
     // ...
     }).catch((error) => {
     // Handle Errors here.
@@ -265,8 +275,53 @@ window.logOut = function logOut(){
 
 window.sendComment = function sendComment(){
     const message = document.querySelector("textarea");
-    console.log("message : " + message.value);
+
     message.value = "";
 }
+
+function main(){
+    window.users = [];
+    const user = window.currentUser;
+    const username = window.username;
+    const currentDate = Timestamp.now();
+    let userAlreadyExistsInDb = false;
+
+    window.db = getFirestore();
+    window.colRef = collection(window.db, "users");
+
+    getDocs(window.colRef)
+    .then( (snapshot) =>{
+        snapshot.docs.forEach((doc) =>{
+            window.users.push({ ...doc.data(), id : doc.id});
+        })
+    })
+    .catch((err) => {
+        console.log(err.message);
+    });
+    
+    window.users.forEach( (user) => {
+        if (user.email == window.currentUser.email){
+            userAlreadyExistsInDb = true;
+        }
+    });
+
+    if(!userAlreadyExistsInDb){
+        addDoc(window.colRef, {
+            email : window.currentUser.email,
+            comment : "",
+            date: currentDate,
+            username : window.username,
+        })
+        .then( () => {
+        })
+        .catch( (err) => {
+            console.log( err.message);
+        })
+    }
+
+    document.querySelector(".username").innerHTML = username;
+
+}
+
 
 window.showPortfolio(false);

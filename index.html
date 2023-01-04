@@ -170,7 +170,8 @@
                   Future Engineer<br> / Web designer<br>/ Gamer / Goofy guy /></strong></p>
             </div>
             <div class="col mt-3 ms-3">
-                <div class="lead display-3 fw-bold mode-text text-center text-lg-start">Hi ! I'm Jad</div>
+                <div class="lead display-3 fw-bold mode-text text-center text-lg-start">
+                  Hi <span class="username"></span>!</div>
                 <p class="lead mode-text mt-2">Welcome to my website! I am a 
                   computer science student at 
                   <a class="btn-link text-decoration-none mode-text" href="https://enseirb-matmeca.bordeaux-inp.fr/fr">
@@ -1412,22 +1413,25 @@
                       </div>
                     </div>
 
-                    <div class="col-12 text-center">
-                      <div class="row textarea-container">
-                        <div class="col-12 text-center">
-                          <textarea  class="text-start email lead text-dark rounded border border-decoration-none p-2" 
-                          style="font-weight:400; min-height: 150px; max-height: 300px; width: 100%; max-width: 600px;" maxlength="400" rows="3" cols="50" type="text" placeholder="How can I help you ?"></textarea>
+                    <section id="comment">
+                      <div class="col-12 text-center">
+                        <div class="row textarea-container">
+                          <div class="col-12 text-center">
+                            <textarea  class="text-start email lead text-dark rounded border border-decoration-none p-2" 
+                            style="font-weight:400; min-height: 150px; max-height: 200px; width: 100%; max-width: 600px;" maxlength="400" rows="3" cols="50" type="text" placeholder="Is there anything you want to tell me ? ✌🏼"></textarea>
+                          </div>
+                          <div class="col-12 text-center">
+                            <button onsubmit="window.sendComment(); return false;" type="submit" class="btn btn-dark lead text-center border-none p-2 mt-2" style="width: 50%;">Send</button>
+                          </div>
                         </div>
-                        <div class="col-12 text-center">
-                          <button onclick="window.sendComment();" class="btn btn-dark lead text-center border-none p-2 mt-2" style="width: 50%;">Send</button>
+
+                        <div class="textarea-success-send">
+                          <!--img and text saying that their message was successfuly sent-->
                         </div>
-                      </div>
 
-                      <div class="textarea-success-send">
-                        <!--img and text saying that their message was successfuly sent-->
                       </div>
+                    </section>
 
-                    </div>
                   </div>
                 </div>
 
