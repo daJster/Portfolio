@@ -44,13 +44,28 @@
                         <p class="lead signin-mode d-none display-1 text-center text-light">Sign In</p>                    
                     </div>
 
+                    <div class="col-12 p-2 warning-message-container rounded bg-danger">
+                      <div class="row">
+                        <div class="col-10">
+                          <p class="text-dark warning-message lead fw-bold">
+                          </p>
+                        </div>
+                        <div class="col-1">
+                          <button type="button" onclick="console.log('close warning message!');" class="warning-message-close btn bg-dark text-light">
+                            x
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="col-12 p-2 text-center ">
-                        <input  class="text-start email lead text-dark rounded border border-decoration-none p-2" style="font-weight:400; width: 100%" required type="email" placeholder="Email">
+                        <input  class="text-start email lead text-dark rounded border border-decoration-none p-2" style="font-weight:400; width: 100%" 
+                        maxlength="40" required type="email" placeholder="Email">
                     </div>
 
                     <div class="col-12 p-2 text-center ">
                         <input  class="text-start password lead text-dark rounded border border-decoration-none p-2" style="font-weight:400; width: 100%" minlength="8" 
-                        required type="password" placeholder="Password">
+                        required type="password"  maxlength="40" placeholder="Password">
                     </div>
 
                     <div class="col-12 p-2 text-center ">
@@ -78,12 +93,15 @@
                         </div>
                     </div>
 
-                    <div class="col-12 p-2 text-center ">
+                    <div class="col-12 p-2 text-center" style="height: 80px;">
                         <p class="lead login-mode text-light" style="font-size: 2.5vh;">You don't have an account ?</p>
                         <p class="lead signin-mode d-none text-light" style="font-size: 2.5vh;">You already have an account ?</p>
                         <button type="button" onclick="window.changeToSignIn(true);" class="lead btn login-mode btn-link text-center text-light">Sign In</button>  
-                        <button type="button" onclick="window.changeToSignIn(false);" class="lead btn signin-mode d-none btn-link text-center text-light">Log In</button>  
+                        <button type="button" onclick="window.changeToSignIn(false);" class="lead btn signin-mode d-none btn-link text-center text-light">Log In</button> 
                     </div>
+                    <button type="button" onclick="console.log('forgot ur password xD!');" class="lead btn btn-link text-center text-light" style="font-size: 10px;">
+                      Forgot your password ?
+                    </button> 
                 </form>
             </div>
         </div>

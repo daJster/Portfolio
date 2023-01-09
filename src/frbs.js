@@ -41,6 +41,7 @@ window.providerGithub = new GithubAuthProvider();
 
 const signinEls = document.querySelectorAll(".signin-mode");
 const loginEls = document.querySelectorAll(".login-mode");
+const warningMessage = document.querySelector(".warning-message");
 window.currentUser = null;
 
 window.changeToSignIn = function changeToSignIn(b){
@@ -95,7 +96,7 @@ window.signInEmailAndPassword = function signInEmailAndPassword(){
             const errorCode = error.code;
             const errorMessage = error.message;
 
-            console.log(errorCode + "\n errMsg :\t" + errorMessage);
+            warningMessage.innerHTML = errorCode;
         });
 }
 
@@ -118,7 +119,7 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
             const errorCode = error.code;
             const errorMessage = error.message;
 
-            console.log(errorCode + "\n errMsg :\t" + errorMessage);
+            warningMessage.innerHTML = errorCode;
         });
 }
 
@@ -148,7 +149,7 @@ window.signInGoogle = function signInGoogle(){
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
     
-        console.log(errorCode + "\n errMsg :\t" + errorMessage + "\n credentialERR :\t" + credential);
+        warningMessage.innerHTML = errorCode;
         // ...
         });
 }
@@ -178,8 +179,8 @@ window.signInGithub = function signInGithub(){
         const email = error.customData.email;
         // The AuthCredential type that was used.
         const credential = GithubAuthProvider.credentialFromError(error);
-    
-        console.log(errorCode + "\n errMsg :\t" + errorMessage + "\n credentialERR :\t" + credential);
+            
+        warningMessage.innerHTML = errorCode;
         // ...
         });
 }
@@ -249,7 +250,7 @@ setPersistence(auth, inMemoryPersistence)
     // The AuthCredential type that was used.
     const credential = GithubAuthProvider.credentialFromError(error);
 
-    console.log(errorCode + "\n errMsg :\t" + errorMessage + "\n credentialERR :\t" + credential);
+    warningMessage.innerHTML = errorCode;
     // ...
     })
   .catch((error) => {
@@ -291,36 +292,38 @@ function main(){
 
     getDocs(window.colRef)
     .then( (snapshot) =>{
+        // Inside snapshot promise
         snapshot.docs.forEach((doc) =>{
             window.users.push({ ...doc.data(), id : doc.id});
         })
+
+        Object.keys(window.users).forEach((key) => {
+            const user = window.users[key];
+            if (user.email === window.currentUser.email){
+                userAlreadyExistsInDb = true;
+            }
+        });
+
+        if(!userAlreadyExistsInDb){
+            addDoc(window.colRef, {
+                email : window.currentUser.email,
+                comment : "",
+                date: currentDate,
+                username : window.username,
+            })
+            .then( () => {
+            })
+            .catch( (err) => {
+                console.log( err.message);
+            })
+        }
+
     })
     .catch((err) => {
         console.log(err.message);
     });
-    
-    window.users.forEach( (user) => {
-        if (user.email == window.currentUser.email){
-            userAlreadyExistsInDb = true;
-        }
-    });
-
-    if(!userAlreadyExistsInDb){
-        addDoc(window.colRef, {
-            email : window.currentUser.email,
-            comment : "",
-            date: currentDate,
-            username : window.username,
-        })
-        .then( () => {
-        })
-        .catch( (err) => {
-            console.log( err.message);
-        })
-    }
 
     document.querySelector(".username").innerHTML = username;
-
 }
 
 
