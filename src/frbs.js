@@ -4,6 +4,8 @@ import { getFirestore,
     collection, 
     getDocs,
     addDoc,
+    updateDoc,
+    doc,
     Timestamp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
 import { getAuth, 
@@ -42,6 +44,7 @@ window.providerGithub = new GithubAuthProvider();
 const signinEls = document.querySelectorAll(".signin-mode");
 const loginEls = document.querySelectorAll(".login-mode");
 const warningMessage = document.querySelector(".warning-message");
+const warningMessageContainer = document.querySelector(".warning-message-container");
 window.currentUser = null;
 
 window.changeToSignIn = function changeToSignIn(b){
@@ -76,6 +79,13 @@ window.changeToSignIn = function changeToSignIn(b){
     }
 }
 
+window.showWarningContainer = function showWarningContainer(){
+    warningMessageContainer.classList.add("isVisible");
+}
+
+window.hideWarningContainer = function hideWarningContainer(){
+    warningMessageContainer.classList.remove("isVisible");    
+}
 
 // Authenticating users with Email + Password
 window.signInEmailAndPassword = function signInEmailAndPassword(){
@@ -91,12 +101,15 @@ window.signInEmailAndPassword = function signInEmailAndPassword(){
             window.username = user.email.split("@")[0];
             window.showPortfolio(true);
             main();
+            return false;
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
 
             warningMessage.innerHTML = errorCode;
+            window.showWarningContainer();
+            return false;
         });
 }
 
@@ -114,12 +127,15 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
             window.username = user.email.split("@")[0];
             window.showPortfolio(true);
             main();
+            return false;
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
 
             warningMessage.innerHTML = errorCode;
+            window.showWarningContainer();
+            return false;
         });
 }
 
@@ -150,6 +166,7 @@ window.signInGoogle = function signInGoogle(){
         const credential = GoogleAuthProvider.credentialFromError(error);
     
         warningMessage.innerHTML = errorCode;
+        window.showWarningContainer();
         // ...
         });
 }
@@ -181,6 +198,7 @@ window.signInGithub = function signInGithub(){
         const credential = GithubAuthProvider.credentialFromError(error);
             
         warningMessage.innerHTML = errorCode;
+        window.showWarningContainer();
         // ...
         });
 }
@@ -276,8 +294,49 @@ window.logOut = function logOut(){
 
 window.sendComment = function sendComment(){
     const message = document.querySelector("textarea");
+    // send message to firestore
+    const userDoc = getDocByEmail(window.users, window.currentUser.email);
+    const userDocRef = doc(window.db, 'users', userDoc.id);
+
+    updateDoc(userDocRef, { // uploading comment
+        comment: message.value
+    })
+    .then(() => {
+        const textareaContainer = document.querySelector(".textarea-container");
+        const textareaSendSuccess = document.querySelector(".textarea-send-success");
+    
+        textareaContainer.classList.remove("isVisible");
+        setTimeout( () => {
+            textareaContainer.classList.add("d-none");
+        }, 800);
+    
+        setTimeout( () => {
+            textareaSendSuccess.classList.add("isVisible");
+        }, 1000);
+    })
+    .catch((error) => {
+        console.error("Error updating document: ", error);
+    });
 
     message.value = "";
+}
+
+function isInCollection(users, email){ // only used with firestore docs
+    for (const user of Object.values(users)) {
+        if (user.email === email) {
+          return true;
+        }
+      }
+    return false;
+}
+
+function getDocByEmail(users, email){
+    for (const user of Object.values(users)) {
+        if (user.email === email) {
+          return user;
+        }
+      }
+    return null;
 }
 
 function main(){
@@ -285,7 +344,7 @@ function main(){
     const user = window.currentUser;
     const username = window.username;
     const currentDate = Timestamp.now();
-    let userAlreadyExistsInDb = false;
+    var userAlreadyExistsInDb = false;
 
     window.db = getFirestore();
     window.colRef = collection(window.db, "users");
@@ -294,15 +353,10 @@ function main(){
     .then( (snapshot) =>{
         // Inside snapshot promise
         snapshot.docs.forEach((doc) =>{
-            window.users.push({ ...doc.data(), id : doc.id});
+            window.users.push({ ...doc.data(), id : doc.id, doc: doc});
         })
 
-        Object.keys(window.users).forEach((key) => {
-            const user = window.users[key];
-            if (user.email === window.currentUser.email){
-                userAlreadyExistsInDb = true;
-            }
-        });
+        userAlreadyExistsInDb = isInCollection(window.users, user.email);
 
         if(!userAlreadyExistsInDb){
             addDoc(window.colRef, {

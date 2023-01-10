@@ -221,3 +221,41 @@ body{
   background-color: whitesmoke;
   transform: rotateX(180deg);
 }
+
+.warning-message-container{
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  transition: .2s ease-in-out;
+}
+
+.warning-message-container.isVisible{
+  opacity: 1;
+  height: 60px;
+  visibility: visible;
+  margin-top: 0px;
+}
+
+
+.textarea-container.isVisible{
+  opacity: 1;
+  visibility: visible;
+}
+
+.textarea-container{
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s ease-in-out;
+}
+
+.textarea-send-success{
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s ease-in-out;
+}
+
+.textarea-send-success.isVisible{
+  opacity: 1;
+  visibility: visible;
+}
