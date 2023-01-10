@@ -70,14 +70,14 @@
                     </div>
 
                     <div class="col-12 p-2 text-center">
-                      <div class="g-recaptcha" data-sitekey="6LfJlOkjAAAAAJ7JyzPy7MuH_yEXtlxuPpfUvC43"></div>
+                      <input class="g-recaptcha" data-sitekey="6LfJlOkjAAAAAJ7JyzPy7MuH_yEXtlxuPpfUvC43" required>
                     </div>
 
                     <div class="col-12 p-2 text-center ">
-                        <button onsubmit="logInEmailAndPassword(); return false;" 
+                        <button onclick="logInEmailAndPassword(); return false;" 
                         class="lead login-mode text-center btn btn-primary text-light"  style="width: 70%" type="submit">Log In</button>
 
-                        <button onsubmit="signInEmailAndPassword(); return false;" 
+                        <button onclick="signInEmailAndPassword(); return false;" 
                         class="lead signin-mode d-none text-center btn btn-primary text-light"  style="width: 70%" type="submit">Sign In</button>
                     </div>
 
