@@ -94,7 +94,14 @@ window.signInEmailAndPassword = function signInEmailAndPassword(){
     //** Creating the user's account */
     createUserWithEmailAndPassword(auth, email, password)
         .then( (userCredential) => {  // returns a promise 
-
+            if (notARobot === false){
+                const recaptchaCol = document.querySelector(".recaptcha-col");
+                recaptchaCol.classList.add("isRed");
+                setTimeout( () => {
+                    recaptchaCol.classList.remove("isRed");
+                }, 400)
+                return false;
+            }                    
             // signed in
             const user = userCredential.user;
             window.currentUser = user;
@@ -120,7 +127,14 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
     //**log in if the user already exists */
     signInWithEmailAndPassword(auth, email, password)
         .then( (userCredential) => {  // returns a promise 
-
+            if (notARobot === false){
+                const recaptchaCol = document.querySelector(".recaptcha-col");
+                recaptchaCol.classList.add("isRed");
+                setTimeout( () => {
+                    recaptchaCol.classList.remove("isRed");
+                }, 800)
+                return false;
+            }                        
             // signed in
             const user = userCredential.user;
             window.currentUser = user;
@@ -293,10 +307,11 @@ window.logOut = function logOut(){
 }
 
 window.sendComment = function sendComment(){
-    const message = document.querySelector("textarea");
+    const message = document.querySelector(".textarea-message");
     // send message to firestore
     const userDoc = getDocByEmail(window.users, window.currentUser.email);
     const userDocRef = doc(window.db, 'users', userDoc.id);
+    console.log(userDocRef, message.value);
 
     updateDoc(userDocRef, { // uploading comment
         comment: message.value

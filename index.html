@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="./styles/main.css">
     <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>    
     <title>Log in</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      var notARobot = false;
+      function onLoadCallback(){
+        grecaptcha.render('recaptcha-container', {
+          'sitekey' : "6LfJlOkjAAAAAJ7JyzPy7MuH_yEXtlxuPpfUvC43",
+          'callback' : successRecaptchaCallback,
+
+        });
+      }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onLoadCallback&render=explicit" async defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
@@ -69,8 +79,8 @@
                         type="password"  maxlength="40" placeholder="Password" required>
                     </div>
 
-                    <div class="col-12 p-2 text-center">
-                      <div class="g-recaptcha" data-sitekey="6LfJlOkjAAAAAJ7JyzPy7MuH_yEXtlxuPpfUvC43"></div>
+                    <div class="col-12 p-2 recaptcha-col rounded">
+                      <div class="g-recaptcha" id="recaptcha-container"></div>
                     </div>
 
                     <div class="col-12 p-2 text-center ">
@@ -1442,7 +1452,7 @@
                       <div class="col-12 text-center">
                         <div class="row textarea-container isVisible">
                           <div class="col-12 text-center">
-                            <textarea  class="text-start email lead text-dark rounded border border-decoration-none p-2" 
+                            <textarea  class="text-start email lead text-dark textarea-message rounded border border-decoration-none p-2" 
                             style="font-weight:400; min-height: 150px; max-height: 200px; width: 100%; max-width: 600px;" maxlength="400" rows="3" cols="50" type="text" placeholder="Is there anything you want to tell me ? ✌🏼"></textarea>
                           </div>
                           <div class="col-12 text-center">

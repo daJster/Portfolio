@@ -217,3 +217,8 @@ if (sendButton){
         }
     });
 }
+
+
+function successRecaptchaCallback(){
+    notARobot = true;
+}

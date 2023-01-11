@@ -259,3 +259,12 @@ body{
   opacity: 1;
   visibility: visible;
 }
+
+.recaptcha-col{
+  background-color: whitesmoke;
+  transition: .2s ease-in-out;
+}
+
+.recaptcha-col.isRed{
+  background-color: rgb(157, 23, 23);
+}
