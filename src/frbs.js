@@ -156,7 +156,7 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
 
 // Authenticating using Google service
 window.signInGoogle = function signInGoogle(){
-    signInWithRedirect(auth, providerGoogle)
+    signInWithPopUp(auth, providerGoogle)
         .then((result) => {
     
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -188,7 +188,7 @@ window.signInGoogle = function signInGoogle(){
 
 // Authenticating using Github service
 window.signInGithub = function signInGithub(){
-    signInWithRedirect(auth, providerGithub)
+    signInWithPopUp(auth, providerGithub)
         .then((result) => {
     
         // This gives you a Github Access Token. You can use it to access the Google API.
@@ -259,7 +259,7 @@ if (window.currentUser === null) {
       // In memory persistence will be applied to the signed in Google user
       // even though the persistence was set to 'none' and a page redirect
       // occurred.
-      return signInWithRedirect(auth, providerGoogle);
+      return signInWithPopUp(auth, providerGoogle);
     })
     .then((result) => { // duplication of code to FIX !
       
