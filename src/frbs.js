@@ -13,7 +13,7 @@ import { getAuth,
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     GithubAuthProvider,
-    signInWithPopUp,
+    signInWithPopup,
     inMemoryPersistence,
     setPersistence,
     signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
@@ -156,7 +156,7 @@ window.logInEmailAndPassword = function logInEmailAndPassword(){
 
 // Authenticating using Google service
 window.signInGoogle = function signInGoogle(){
-    signInWithPopUp(auth, providerGoogle)
+    signInWithPopup(auth, providerGoogle)
         .then((result) => {
     
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -188,7 +188,7 @@ window.signInGoogle = function signInGoogle(){
 
 // Authenticating using Github service
 window.signInGithub = function signInGithub(){
-    signInWithPopUp(auth, providerGithub)
+    signInWithPopup(auth, providerGithub)
         .then((result) => {
     
         // This gives you a Github Access Token. You can use it to access the Google API.
@@ -259,7 +259,7 @@ if (window.currentUser === null) {
       // In memory persistence will be applied to the signed in Google user
       // even though the persistence was set to 'none' and a page redirect
       // occurred.
-      return signInWithPopUp(auth, providerGoogle);
+      return signInWithPopup(auth, providerGoogle);
     })
     .then((result) => { // duplication of code to FIX !
       
