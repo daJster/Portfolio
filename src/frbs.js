@@ -13,7 +13,7 @@ import { getAuth,
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     GithubAuthProvider,
-    signInWithRedirect,
+    signInWithPopUp,
     inMemoryPersistence,
     setPersistence,
     signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
