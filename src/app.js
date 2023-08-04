@@ -81,6 +81,7 @@ function controlnav(enable=true){
 function UIAction(field, action){
     const elementContents = document.querySelectorAll(`.element.content.${field}`);
     const elementCursors = document.querySelectorAll(`.element.cursor.${field}`);
+    console.log(elementCursors, elementContents)
     const length = elementContents.length;
     let index = 0;
     Object.keys(elementContents).forEach( (key) => {

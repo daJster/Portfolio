@@ -397,4 +397,4 @@ function main(){
 }
 
 
-window.showPortfolio(false);
+window.showPortfolio(true);

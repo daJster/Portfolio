@@ -6,81 +6,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">    <title>Inria ML IR</title>
+    <title>Inria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
+
 <body>
-    <!--NAVBAR -->
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class=" btn btn-link text-light navbar-brand" onclick="closeGJ();">
-            <img src="./assets/appLogo.png" alt="Logo" width="30" height="24" class="d-inline-block mt-1 align-text-top">
-            Jad Elkarchi
-          </button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#expertise" data-mdb-ripple-color="dark">Expertise</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#education">Education</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#skills">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#certifications">Certifications</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#languages">Languages</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#goals">Goals</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#games" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hobbies</a>
-                <ul class="dropdown-menu row m-2">
-                  <div class="col-12">
-                    <li><a class="dropdown-item" href="#games">About</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li>
-                      <button class="text-light fw-bold text-decoration-none  text-center btn gamejam-screen dropdown-item rounded" onclick="launchGJ();">
-                        GameJam
-                      </button>
-                    </li>
-                  </div>
-                </ul>
 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-              <li class="nav-item me-4">
-                <button class="nav-link btn btn-link text-warning" onclick="window.logOut();">Log out</button>
-              </li>
-            </ul>
-          </div>
-
-          <button class="btn btn-decoration-none screen-mode me-1 bg-light" onclick="switchLight();">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="height: 30px;" fill="dark">
-              <!-- Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-              <path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 
-              0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 
-              .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 
-              .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 
-              175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 
-              236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 
-              80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"/>
-            </svg>              
-          </button>
-
+    <div class="background-wrapper">
+        <div class="square bg-secondary rounded-right" style="position: absolute; top:0; left:0; opacity:.3; height: 70vh; width: 40vw;">
         </div>
-      </nav>
+        <div class="square bg-secondary rounded-left" style="position: absolute; bottom:0; right:0; opacity:.3; height: 70vh; width: 40vw;">
+        </div>
+    </div>
+
+    <!--NAVBAR -->
+    <div class="row">
+        <div class="col-12" style="height: auto;">
+            <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-danger">
+                <div class="container-fluid pe-2">
+                    <button style="background-color: transparent; border: none" onclick="goToPage(1);">
+                        <img src="./assets/inria.png" class="img rounded">
+                    </button>
+                    <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            
+                    <div class="collapse navbar-collapse container rounded navbar-wrapper justify-content-center" id="navbarSupportedContent">
+                        <div class="row rounded justify-content-center" style="width: 100%; margin-left: 2px">
+                            <div class="col-md-2 col-lg-2 col-12  ms-3 mt-3 rounded">
+                                <button type="button" class="btn col-12 btn-danger text-light nav-link p-1 lead fw-bold rounded" onclick="goToPage(2);">Project</button>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-12 ms-3 mt-3 rounded">
+                                <button type="button" class="btn col-12 btn-danger text-light nav-link p-1 lead fw-bold rounded" onclick="goToPage(3);">DataBase</button>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-12 ms-3 mt-3 rounded">
+                                <button type="button" class="btn col-12 btn-danger text-light nav-link p-1 lead fw-bold rounded" onclick="goToPage(4);">Analysis</button>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-12 ms-3 mt-3 rounded">
+                                <button type="button" class="btn col-12 btn-danger text-light nav-link p-1 lead fw-bold rounded" onclick="goToPage(5);">About</button>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-12 ms-3 mt-3 rounded">
+                                <button type="button" class="btn col-12 btn-danger text-light nav-link p-1 lead fw-bold" onclick="goToPage(6);">Report</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <button class="btn btn-decoration-none screen-mode me-1 bg-light" onclick="switchLight();">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="height: 20px;" fill="dark">
+                        <!-- Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 
+                        0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 
+                        .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 
+                        .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 
+                        175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 
+                        236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 
+                        80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"/>
+                    </svg>              
+                    </button>
+            
+                    </div>
+                </nav>
+        </div>
+        <div class="col-12" style="height: auto;">
+            <div class="page page-1 ps-3 row justify-content-center text-center">
+                <div class=" col-12 justify-content-center">
+                    <p class="display-1 lead fw-bold text-start" style="font-family: 'Fira Sans', sans-serif;">
+                        Error detection in MPI Aplications <br>
+                        using deep learning
+                    </p>
+    
+                    <p class="text-start lead" style="font-size: xx-large;">
+                        The project is about building an A.I based program in python that allow us to detect and predict errors 
+                        in multithread apps and parallel code. The subject is also about extending the MPI code database in order to train 
+                        our detection model using shell scripts and procreation methods. The internship requires a good sense of data analysis,
+                        knowledge, and experience in Python, Shell, and MPI programming. It also requires good knowledge of Linux and other 
+                        operating systems to test the program in different ways and an introduction level of feature engineering using LLVM-IR compiler.
+                    </p>
+                </div>
+
+                <div class="col-12 mt-5 justify-content-center text-center">
+                    <p class="lead text-center"  style="font-size: xx-large;">A collaboration of :</p>
+                    <div>
+                        <a href="https://www.iastate.edu/"><img class="mb-5" src="./assets/IowaUni.png" style="height: 80px;"></a>
+                        <a href="https://www.inria.fr/fr/centre-inria-universite-bordeaux"><img class="mb-5 rounded" src="./assets/inria.png" style="height: 80px;"></a>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+    
+            <div class="page page-2 stored d-none ps-3 justify-content-center text-center">
+                <div class="justify-content-center">
+                    <p class="display-1 lead fw-bold text-start" style="font-family: 'Fira Sans', sans-serif;">
+                        Error detection in MPI Aplications <br>
+                        using deep learning 2
+                    </p>
+    
+                    <p class="text-start lead" style="font-size: xx-large;">
+                        The project is about building an A.I based program in python that allow us to detect and predict errors 
+                        in multithread apps and parallel code. The subject is also about extending the MPI code database in order to train 
+                        our detection model using shell scripts and procreation methods. The internship requires a good sense of data analysis,
+                        knowledge, and experience in Python, Shell, and MPI programming. It also requires good knowledge of Linux and other 
+                        operating systems to test the program in different ways and an introduction level of feature engineering using LLVM-IR compiler.
+                    </p>
+                </div>
+    
+            </div>
+    
+            <div class="page page-3 stored d-none ps-3 justify-content-center text-center">
+                <div class="justify-content-center">
+                    <p class="display-1 lead fw-bold text-start" style="font-family: 'Fira Sans', sans-serif;">
+                        Error detection in MPI Aplications <br>
+                        using deep learning 3
+                    </p>
+    
+                    <p class="text-start lead" style="font-size: xx-large;">
+                        The project is about building an A.I based program in python that allow us to detect and predict errors 
+                        in multithread apps and parallel code. The subject is also about extending the MPI code database in order to train 
+                        our detection model using shell scripts and procreation methods. The internship requires a good sense of data analysis,
+                        knowledge, and experience in Python, Shell, and MPI programming. It also requires good knowledge of Linux and other 
+                        operating systems to test the program in different ways and an introduction level of feature engineering using LLVM-IR compiler.
+                    </p>
+                </div>
+    
+            </div>
+    
+            <div class="page page-4 stored d-none ps-3 justify-content-center text-center">
+                <div class="justify-content-center">
+                    <p class="display-1 lead fw-bold text-start" style="font-family: 'Fira Sans', sans-serif;">
+                        Error detection in MPI Aplications <br>
+                        using deep learning 4
+                    </p>
+    
+                    <p class="text-start lead" style="font-size: xx-large;">
+                        The project is about building an A.I based program in python that allow us to detect and predict errors 
+                        in multithread apps and parallel code. The subject is also about extending the MPI code database in order to train 
+                        our detection model using shell scripts and procreation methods. The internship requires a good sense of data analysis,
+                        knowledge, and experience in Python, Shell, and MPI programming. It also requires good knowledge of Linux and other 
+                        operating systems to test the program in different ways and an introduction level of feature engineering using LLVM-IR compiler.
+                    </p>
+                </div>
+    
+            </div>
+    
+            <div class="page page-5 stored d-none ps-3 justify-content-center text-center">
+                <div class="justify-content-center">
+                    <p class="display-1 lead fw-bold text-start" style="font-family: 'Fira Sans', sans-serif;">
+                        Error detection in MPI Aplications <br>
+                        using deep learning 5
+                    </p>
+    
+                    <p class="text-start lead" style="font-size: xx-large;">
+                        The project is about building an A.I based program in python that allow us to detect and predict errors 
+                        in multithread apps and parallel code. The subject is also about extending the MPI code database in order to train 
+                        our detection model using shell scripts and procreation methods. The internship requires a good sense of data analysis,
+                        knowledge, and experience in Python, Shell, and MPI programming. It also requires good knowledge of Linux and other 
+                        operating systems to test the program in different ways and an introduction level of feature engineering using LLVM-IR compiler.
+                    </p>
+                </div>
+    
+            </div>
+    
+            <div class="page page-6 stored d-none ps-3 justify-content-center text-center">
+                <div class="justify-content-center">
+                    <p class="display-1 lead fw-bold text-start" style="font-family: 'Fira Sans', sans-serif;">
+                        Error detection in MPI Aplications <br>
+                        using deep learning 6
+                    </p>
+    
+                    <p class="text-start lead" style="font-size: xx-large;">
+                        The project is about building an A.I based program in python that allow us to detect and predict errors 
+                        in multithread apps and parallel code. The subject is also about extending the MPI code database in order to train 
+                        our detection model using shell scripts and procreation methods. The internship requires a good sense of data analysis,
+                        knowledge, and experience in Python, Shell, and MPI programming. It also requires good knowledge of Linux and other 
+                        operating systems to test the program in different ways and an introduction level of feature engineering using LLVM-IR compiler.
+                    </p>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+
 
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="home.js"></script>
 </html>
